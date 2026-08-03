@@ -5,25 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eworld_mainPC</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet"><!-- 폰트 -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"><!-- 폰트 -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" /><!-- 지도 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"><!-- fontawesome -->
-    <link rel="stylesheet" href="./css/main.css">
-    
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <!-- 2026.08.03 -->
-    <!-- header -->
-     <header>
+    <!-- header (Desktop & Tablet) -->
+    <header class="header_desktop_tablet">
         <button type="button" class="menu_toggle" aria-label="전체메뉴">
             <i class="fa-solid fa-bars"></i>
         </button>
         <div class="header_box">
-            <a href="./index.html"><div class="logo">E-world</div></a>
+            <a href="index.html"><div class="logo">E-world</div></a>
         </div>
         <nav class="header_nav_menu">
             <ul>
-                <li><a href="./sub/attraction.html">즐길거리</a></li>
+                <li><a href="sub/attraction.html">즐길거리</a></li>
                 <li><a href="#">시설정보</a></li>
                 <li><a href="#">요금혜택</a></li>
                 <li><a href="#">이용가이드</a></li>
@@ -32,21 +30,43 @@
         </nav>
         <div class="auth_menu">
             <ul>
-                <li><a href="./sub/booking.html">예매하기</a></li>
+                <li><a href="sub/booking.html">예매하기</a></li>
                 <li><a href="#">로그인</a></li>
             </ul>
         </div>
         <button type="button" class="search_toggle" aria-label="검색">
             <i class="fa-solid fa-magnifying-glass"></i>
         </button>
-     </header>
+    </header>
     <!-- //header -->
+
+    <!-- header (Mobile Only) -->
+    <header class="header_mobile">
+        <div class="mobile_top">
+            <a href="mainpc.html" class="logo_mobile">E-World</a>
+            <div class="mobile_icons">
+                <button type="button" class="icon_btn" aria-label="검색">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button type="button" class="icon_btn" aria-label="알림">
+                    <i class="fa-regular fa-bell"></i>
+                </button>
+            </div>
+        </div>
+        <nav class="mobile_subnav">
+            <ul>
+                <li class="is-active"><a href="#">홈</a></li>
+                <li><a href="#">혜택</a></li>
+                <li><a href="#">이벤트</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <!-- herosection -->
     <div class="hero-wrapper">
         <div class="hero-box">
             <a href="#">
-                <img src="./img/herobanner_1.jpg" alt="herobanner_img1">
+                <img src="img/main_banner.png" alt="herobanner_img1" >
             </a>
             <button type="button" class="hero_nav hero_nav--prev" aria-label="이전 배너">‹</button>
             <button type="button" class="hero_nav hero_nav--next" aria-label="다음 배너">›</button>
@@ -57,8 +77,24 @@
         </div>
         <div class="quick_bar_box">
             <div class="today_weather">
-                <h4 class="tw_title">오늘의 이월드</h4>
-                <div class="tw_row">
+                <div class="tw_date_mob">2026 07월 01일 수요일</div>
+                <div class="tw_header_row">
+                    <h4 class="tw_title">오늘의 이월드</h4>
+                    <div class="tw_temp_box">
+                        <span class="tw_temp">28.5<span class="tw_deg">°C</span></span>
+                    </div>
+                </div>
+                <div class="tw_card_mob">
+                    <div class="tw_hours_row">
+                        <span class="tw_time">10:00 ~ 22:00</span>
+                    </div>
+                    <div class="tw_links_row">
+                        <a href="#" class="tw_link">일별 운영정보 &gt;</a>
+                        <a href="#" class="tw_link">교통 정보 안내</a>
+                        <span class="tw_badge_busy">혼잡</span>
+                    </div>
+                </div>
+                <div class="tw_row_desktop">
                     <span class="tw_icon"><i class="fa-solid fa-cloud"></i></span>
                     <span class="tw_temp">20<span class="tw_deg">°C</span></span>
                     <span class="tw_label">운영시간</span>
@@ -72,24 +108,24 @@
                     <span>오늘의 이월드</span>
                 </div>
                 <div class="quick_item">
-                    <div class="quick_icon">🎟️</div>
+                    <div class="quick_icon"><i class="fa-solid fa-ticket" style="color: #ffa300;"></i></div>
                     <span>티켓예매</span>
                 </div>
                 <div class="quick_item">
-                    <div class="quick_icon">🛍️</div>
+                    <div class="quick_icon"><i class="fa-brands fa-shopify" style="color: #ffa300;"></i></div>
                     <span class="label_full">온라인 굿즈스토어</span>
                     <span class="label_short">굿즈스토어</span>
                 </div>
                 <div class="quick_item">
-                    <div class="quick_icon">%</div>
+                    <div class="quick_icon"><i class="fa-solid fa-percent" style="color: #ffa300;"></i></div>
                     <span>이달의 혜택</span>
                 </div>
                 <div class="quick_item">
-                    <div class="quick_icon">👥</div>
+                    <div class="quick_icon"><i class="fa-solid fa-users" style="color: #ffa300;"></i></div>
                     <span>단체 예매</span>
                 </div>
                 <div class="quick_item">
-                    <div class="quick_icon">📅</div>
+                    <div class="quick_icon"><i class="fa-solid fa-calendar-days" style="color: #ffa300;"></i></div>
                     <span>운영 / 운휴</span>
                 </div>
             </div>
@@ -98,44 +134,54 @@
     <!-- //herosection -->
 
     <!-- main -->
-     <main class="container">
+    <main class="container">
         <!-- best_attraction -->
         <section>
             <div class="section_title">
                 <h3>이월드 베스트 어트랙션</h3>
                 <a href="#" class="more_btn" aria-label="더보기">›</a>
             </div>
-            <div class="atrraction_grid">
+            <div class="atrraction_grid" id="attractionGrid">
                 <div class="attraction_deco" aria-hidden="true"></div>
-                <div class="attraction-card">
-                    <div class="attraction-card1">
-                        <div class="attraction_info">
-                            <div class="attraction_name">범퍼카</div>
-                            <p>다 때려박아 범퍼카</p>
+                <div class="attraction_slider" id="attractionSlider">
+                    <div class="attraction-card">
+                        <div class="attraction-card1">
+                            <div class="attraction_info">
+                                <div class="attraction_name">범퍼카</div>
+                                <p>다 때려박아 범퍼카</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="attraction-card">
-                    <div class="attraction-card2">
-                        <div class="attraction_info">
-                            <div class="attraction_name">메가스윙 360</div>
-                            <p>360도 회전스윙을 즐기는 놀이기구</p>
+                    <div class="attraction-card">
+                        <div class="attraction-card2">
+                            <div class="attraction_info">
+                                <div class="attraction_name">메가스윙 360</div>
+                                <p>360도 회전스윙을 즐기는 놀이기구</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="attraction-card">
-                    <div class="attraction-card3">
-                        <div class="attraction_info">
-                            <div class="attraction_name">회전목마</div>
-                            <p>빙글빙글 돌아가는 회전목마</p>
+                    <div class="attraction-card">
+                        <div class="attraction-card3">
+                            <div class="attraction_info">
+                                <div class="attraction_name">회전목마</div>
+                                <p>빙글빙글 돌아가는 회전목마</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="attraction-card attraction-card--tablet-only">
-                    <div class="attraction-card4">
-                        <div class="attraction_info">
-                            <div class="attraction_name">탬버린</div>
-                            <p>엉덩이 통통통 찧어도 신나는 디스코장!</p>
+                    <div class="attraction-card attraction-card--tablet-only">
+                        <div class="attraction-card4">
+                            <div class="attraction_info">
+                                <div class="attraction_name">탬버린</div>
+                                <p>엉덩이 통통통 찧어도 신나는 디스코장!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="attraction-card attraction-card--mobile-extra">
+                        <div class="attraction-card5">
+                            <div class="attraction_info">
+                                <div class="attraction_name">귀신의 집</div>
+                                <p>호달호달귀신의 집</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -144,15 +190,15 @@
         <!-- //best_attraction -->
 
         <!-- commercial banner-->
-         <section>
+        <section>
             <div class="commercial_banner">
-                <img src="./img/commercial_banner1.jpg" alt="commercial_banner1_">
+                <img src="img/commercial_banner1.jpg" alt="commercial_banner1" onerror="this.src='https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=1200&q=80'">
             </div>
-         </section>
+        </section>
         <!-- //commercial banner -->
 
         <!-- benefit -->
-         <section>
+        <section>
             <div class="section_title">
                 <h3>이월드 할인혜택</h3>
                 <a href="#" class="more_btn" aria-label="더보기">›</a>
@@ -161,7 +207,7 @@
                 <div class="benefit_card">
                     <div class="benefit_visual">
                         <span class="benefit_tag">이달의 혜택</span>
-                        <img src="img/main_1.png" alt="main1">
+                        <img src="img/main_1.png" alt="main1" onerror="this.src='https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=400&q=80'">
                     </div>
                     <div class="benefit_body">
                         <div class="benefit_date">2026. 7. 1  ~  2026. 7. 31</div>
@@ -174,7 +220,7 @@
                 <div class="benefit_card">
                     <div class="benefit_visual">
                         <span class="benefit_tag">이달의 혜택</span>
-                        <img src="img/main_2.png" alt="main2">
+                        <img src="img/main_2.png" alt="main2" onerror="this.src='https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=400&q=80'">
                     </div>
                     <div class="benefit_body">
                         <div class="benefit_date">2026. 7. 1  ~  2026. 7. 31</div>
@@ -237,18 +283,19 @@
                     </div>
                 </div>
             </div>
-         </section>
+        </section>
         <!-- //benefit -->
 
         <!-- commercial_banner -->
-         <section>
+        <section>
             <div class="commercial_banner">
                 <img src="img/commercial_banner2.jpg" alt="commercial_banner2">
             </div>
-         </section>
+        </section>
         <!-- commercial_banner -->
+
         <!-- guide_map -->
-         <section>
+        <section>
             <h3>이월드 가이드맵</h3>
             <div class="map_tabs">
                 <button class="tab_btn is-active">전체코스</button>
@@ -257,36 +304,27 @@
                 <button class="tab_btn">스릴코스</button>
             </div>
             <div class="map_area">
-                <div id="eworld_map" class="map_area"></div>
+                <div id="eworld_map" class="map_container"></div>
                 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
                 <script>
-                    // 대구 달서구 두류공원로 200 (이월드 위도/경도)
                     var eworldLat = 35.853216;
                     var eworldLng = 128.563811;
-
-                    // 지도 생성 및 위치 고정 (확대 레벨: 16)
                     var map = L.map('eworld_map').setView([eworldLat, eworldLng], 16);
-
-                    // 타일 이미지 불러오기 (OpenStreetMap)
                     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                         maxZoom: 19,
                         attribution: '&copy; OpenStreetMap'
                     }).addTo(map);
-
-                    // 이월드 위치에 핀(마커) 찍기
                     var marker = L.marker([eworldLat, eworldLng]).addTo(map);
-                    
-                    // 마커 클릭 시 뜰 안내 말풍선
                     marker.bindPopup("<b>이월드</b><br>대구 달서구 두류공원로 200").openPopup();
                 </script>
             </div>
-         </section>
+        </section>
         <!-- guide_map -->
-     </main>
+    </main>
     <!-- //main -->
 
     <!-- footer -->
-     <footer>
+    <footer>
         <div class="container">
             <div class="footer_link">
                 <a href="#">이월드 소개</a>
@@ -307,7 +345,167 @@
             </p>
             <p class="footer_copyright">COPYRIGHT© E-WORLD. ALL RIGHTS RESERVED.</p>
         </div>
-     </footer>
+    </footer>
     <!-- //footer -->
+
+    <!-- Mobile Fixed Bottom Navigation Bar -->
+    <nav class="mobile_bottom_bar">
+        <a href="#" class="nav_item is-active">
+            <i class="fa-solid fa-house"></i>
+            <span>홈</span>
+        </a>
+        <a href="#" class="nav_item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>INFO / MAP</span>
+        </a>
+        <a href="#" class="nav_item">
+            <i class="fa-solid fa-ticket"></i>
+            <span>티켓</span>
+        </a>
+        <a href="#" class="nav_item">
+            <i class="fa-solid fa-bars"></i>
+            <span>전체메뉴</span>
+        </a>
+    </nav>
+
+    <!-- 이월드 베스트 어트랙션 : 데스크탑 자동 슬라이드 캐러셀 -->
+    <script>
+    (function () {
+        var DESKTOP_QUERY = '(min-width: 1025px)';
+        var SLIDE_INTERVAL_MS = 3500;   // 10초
+        var TRANSITION_MS = 650;         // CSS scroll-behavior:smooth 이동 시간 여유값
+
+        var grid = document.getElementById('attractionGrid');
+        var slider = document.getElementById('attractionSlider');
+        if (!grid || !slider) return;
+
+        var mq = window.matchMedia(DESKTOP_QUERY);
+        var originalCards = Array.prototype.slice.call(slider.children); // 원본 5개 카드
+        var cloned = false;
+        var intervalId = null;
+        var resizeTimer = null;
+        var index = 0;
+
+        function getGapPx() {
+            var gapStr = window.getComputedStyle(slider).columnGap ||
+                         window.getComputedStyle(slider).gap || '0px';
+            return parseFloat(gapStr) || 0;
+        }
+
+        // 마스코트(attraction_deco)와 카드 폭을 픽셀 단위로 정확히 맞춘다
+        function syncCardWidth() {
+            var deco = grid.querySelector('.attraction_deco');
+            if (!deco) return;
+            var w = deco.getBoundingClientRect().width;
+            if (!w) return;
+            Array.prototype.forEach.call(slider.children, function (card) {
+                card.style.flexBasis = w + 'px';
+                card.style.width = w + 'px';
+            });
+        }
+
+        // 끊김 없는 무한 루프를 위해 원본 카드를 한 번 더 복제해서 뒤에 붙임
+        function ensureClones() {
+            if (cloned) return;
+            originalCards.forEach(function (card) {
+                var clone = card.cloneNode(true);
+                clone.setAttribute('aria-hidden', 'true');
+                clone.classList.add('attraction-card--clone');
+                slider.appendChild(clone);
+            });
+            cloned = true;
+        }
+
+        function removeClones() {
+            if (!cloned) return;
+            var clones = slider.querySelectorAll('.attraction-card--clone');
+            clones.forEach(function (c) { c.remove(); });
+            cloned = false;
+        }
+
+        function stepOnce() {
+            var gap = getGapPx();
+            var cardWidth = originalCards[0].getBoundingClientRect().width;
+            index += 1;
+            slider.scrollTo({ left: index * (cardWidth + gap), behavior: 'smooth' });
+
+            if (index >= originalCards.length) {
+                setTimeout(function () {
+                    slider.style.scrollBehavior = 'auto';
+                    slider.scrollLeft = 0;
+                    index = 0;
+                    // 다음 프레임부터 다시 smooth 하게
+                    requestAnimationFrame(function () {
+                        slider.style.scrollBehavior = 'smooth';
+                    });
+                }, TRANSITION_MS);
+            }
+        }
+
+        function startAutoSlide() {
+            stopAutoSlide();
+            intervalId = setInterval(stepOnce, SLIDE_INTERVAL_MS);
+        }
+
+        function stopAutoSlide() {
+            if (intervalId) {
+                clearInterval(intervalId);
+                intervalId = null;
+            }
+        }
+
+        function initDesktopSlider() {
+            ensureClones();
+            syncCardWidth();
+            index = 0;
+            slider.scrollLeft = 0;
+            startAutoSlide();
+            slider.addEventListener('mouseenter', stopAutoSlide);
+            slider.addEventListener('mouseleave', startAutoSlide);
+        }
+
+        function teardownDesktopSlider() {
+            stopAutoSlide();
+            slider.removeEventListener('mouseenter', stopAutoSlide);
+            slider.removeEventListener('mouseleave', startAutoSlide);
+            removeClones();
+            slider.scrollLeft = 0;
+            index = 0;
+        }
+
+        function handleBreakpointChange(e) {
+            if (e.matches) {
+                initDesktopSlider();
+            } else {
+                teardownDesktopSlider();
+            }
+        }
+
+        // 최초 진입 시 데스크탑이면 슬라이더 활성화
+        if (mq.matches) initDesktopSlider();
+
+        // 브레이크포인트를 넘나들 때 켜고/끄기
+        if (mq.addEventListener) {
+            mq.addEventListener('change', handleBreakpointChange);
+        } else if (mq.addListener) { // 구형 브라우저 호환
+            mq.addListener(handleBreakpointChange);
+        }
+
+        // 같은 데스크탑 폭 안에서 창 크기만 바뀌는 경우 카드 폭 재동기화
+        window.addEventListener('resize', function () {
+            if (!mq.matches) return;
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function () {
+                slider.style.scrollBehavior = 'auto';
+                slider.scrollLeft = 0;
+                index = 0;
+                syncCardWidth();
+                requestAnimationFrame(function () {
+                    slider.style.scrollBehavior = 'smooth';
+                });
+            }, 200);
+        });
+    })();
+    </script>
 </body>
 </html>
