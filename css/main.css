@@ -1,0 +1,849 @@
+/* =========================================================
+   E-World Main Page CSS
+   Desktop 기준(1280) / Tablet 기준(1024, margin16 gutter16 8col)
+   / Mobile 기준(360, margin10 gutter12 4col)
+   ========================================================= */
+
+:root {
+    --font-base: 'Noto Sans KR', sans-serif;
+
+    --color-sky: #37B1E8;
+    --color-main: #FFA300;
+    --color-cream: #FFF6E5;
+    --color-ink: #262629;
+    --color-sub: #8B8B90;
+    --color-border: #ECECEE;
+    --color-white: #FFFFFF;
+
+    --radius-xl: 24px;
+    --radius-lg: 16px;
+    --radius-md: 12px;
+
+    /* desktop: 내부 콘텐츠 폭 정확히 1280을 유지하기 위해 여유 패딩 20px씩 추가 */
+    --container-max: 1320px;
+    --container-pad: 20px;
+    --grid-gap: 16px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: var(--font-base);
+    color: var(--color-ink);
+    background: var(--color-white);
+    -webkit-font-smoothing: antialiased;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; margin: 0; padding: 0; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+img { max-width: 100%; display: block; }
+
+h3 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 32px; /* 지정 사이즈 */
+}
+
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-pad);
+}
+.mobile_subnav { display: none; }
+/* =========================================================
+   Header - Desktop (>1024)
+   ========================================================= */
+.header_tablet,
+.header_mobile { display: none; }
+
+
+header {
+    max-width: 1280px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+.logo {
+    font-weight: 900;
+    font-size: 24px;
+    color: var(--color-main);
+    white-space: nowrap;
+}
+
+.header_nav_menu { flex: 1; }
+
+.header_nav_menu ul {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.header_nav_menu li {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.auth_menu ul {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.auth_menu li {
+    font-size: 20px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.auth_menu li:first-child a {
+    /* background: var(--color-sky);
+    color: var(--color-white);
+    padding: 9px 18px; */
+    /* border-radius: 999px; */
+    display: inline-block;
+}
+
+/* icon buttons (tablet/mobile 공용) */
+.icon_btn {
+    font-size: 20px;
+    line-height: 1;
+    padding: 4px;
+}
+
+/* 태블릿 전용 헤더 아이콘 (햄버거/검색) - 데스크탑에서는 숨김 */
+.menu_toggle,
+.search_toggle {
+    display: none;
+    font-size: 22px;
+    color: var(--color-ink);
+}
+
+/* 굿즈스토어 라벨: 데스크탑은 풀네임, 태블릿/모바일은 축약형 */
+.label_short { display: none; }
+
+/* 4번째(탬버린) 카드는 태블릿 전용 */
+.attraction-card--tablet-only { display: none; }
+
+/* =========================================================
+   Hero + Quick bar
+   ========================================================= */
+.hero-wrapper { position: relative; }
+
+.hero-box {
+    width: 100%;
+    aspect-ratio: 1920 / 680;
+    overflow: hidden;
+    background: linear-gradient(180deg, #6FC7EE 0%, #37B1E8 100%);
+}
+
+.hero-box img { width: 100%; height: 100%; object-fit: cover; }
+
+.hero-box { position: relative; }
+
+.hero_nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    line-height: 1;
+    color: var(--color-white);
+    z-index: 3;
+}
+.hero_nav--prev { left: 3.5%; }
+.hero_nav--next { right: 3.5%; }
+.hero_nav:hover { opacity: 0.8; }
+
+.hero_counter {
+    position: absolute;
+    right: 3.5%;
+    bottom: 8%;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 16px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.35);
+    color: var(--color-white);
+    font-size: 15px;
+    font-weight: 700;
+}
+.hero_pause {
+    font-size: 12px;
+    color: var(--color-white);
+    line-height: 1;
+}
+
+.quick_bar_box {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-pad);
+    position: relative;
+    margin-top: -40px;
+    z-index: 2;
+}
+
+.quick_bar {
+    display: flex;
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    padding: 20px 8px;
+}
+
+.quick_item {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 4px;
+    border-radius: var(--radius-md);
+    transition: background 0.15s ease;
+}
+
+.quick_item:hover { background: var(--color-cream); }
+
+/* 아이콘 이미지 참조 사이즈 308x355 비율 유지 (실제 이미지 삽입 시 object-fit: cover) */
+.quick_icon {
+    width: 44px;
+    height: 44px;
+    aspect-ratio: 308 / 355;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    border-radius: 50%;
+    background: var(--color-cream);
+}
+
+.quick_item span {
+    font-size: 18px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.quick_item--weather .quick_temp {
+    font-size: 24px;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1;
+}
+.quick_item--weather .quick_deg {
+    font-size: 16px;
+    font-weight: 400;
+    color: #555555;
+    margin-left: 2px;
+}
+
+/* =========================================================
+   오늘의 이월드 (날씨 정보 블록) - 데스크탑에서는 숨김, 태블릿에서만 노출
+   ========================================================= */
+.today_weather {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 20px var(--container-pad) 0;
+    text-align: center;
+}
+
+.tw_title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--color-ink);
+}
+
+.tw_row {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 12px;
+}
+
+.tw_icon { font-size: 28px; color: #9D9D9D; }
+
+.tw_temp {
+    font-size: 40px;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1;
+}
+.tw_deg { font-size: 32px; font-weight: 400; color: #9CA3AF; margin-left: 2px; }
+
+.tw_label {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--color-ink);
+    margin-left: 12px;
+}
+.tw_hours {
+    font-size: 32px;
+    font-weight: 700;
+    color: #111827;
+}
+
+/* =========================================================
+   Section common
+   ========================================================= */
+main.container section { margin-top: 64px; }
+
+.section_title {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.more_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--color-ink);
+}
+.more_btn:hover { color: var(--color-main); }
+
+/* =========================================================
+   Best attraction : 썸네일 참조 사이즈 308x355 (데스크탑 4열/gap16 기준 정확히 일치)
+   ========================================================= */
+.atrraction_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--grid-gap);
+}
+.attraction-card1 {
+    background-image: url(/eworld/img/attraction_car.jpg);
+}
+.attraction-card2 {
+    background-image: url(/eworld/img/attraction_mega.jpg);
+}
+.attraction-card3 {
+    background-image: url(/eworld/img/attraction_bingbing.jpg);
+}
+.attraction-card4 {
+    background-image: url(/eworld/img/attraction_tam.jpg);
+}
+.attraction-card1,
+.attraction-card2,
+.attraction-card3,
+.attraction-card4{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.attraction_deco{
+    background-image: url(/eworld/img/Layer\ 2.png);
+    background-size: cover;
+}
+.attraction-card {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    aspect-ratio: 308/355;
+    background-size: cover;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.attraction_info{
+    height: 110px;
+    width: 100%;
+    padding: 12px 18px 16px;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(122, 122, 122, 0.45);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+.attraction_name{
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 6px;
+    color: white;
+}
+.attraction_info p{
+    margin-top: 12px ;
+    font-size: 16px;
+    color: rgb(216, 216, 216);
+    font-weight: 200;
+}
+.attraction_deco{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 308 / 355;
+}
+
+.attraction_thumb {
+    width: 100%;
+    aspect-ratio: 308 / 355;
+    background: linear-gradient(135deg, #FFD9DE 0%, #FFF4E9 100%);
+    overflow: hidden;
+}
+.attraction_thumb img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+
+/* 카드가 아닌 순수 장식용 마스코트 자리 (배경/테두리 없음, 이미지는 추후 삽입) */
+.attraction_deco {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 308 / 355;
+}
+
+/* =========================================================
+   Commercial banner : 1280x300 비율, 2개가 한 묶음(desktop=세로/tablet,mobile=2열)
+   ========================================================= */
+.commercial_row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--grid-gap);
+}
+
+.commercial_banner {
+    width: 100%;
+    aspect-ratio: 1280 / 300;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--color-cream);
+}
+
+.commercial_banner img { width: 100%; height: 100%; object-fit: cover; }
+
+/* =========================================================
+   Benefit grid : 작은 박스 참조 사이즈 416x334 (데스크탑 3열/gap16 기준 정확히 일치)
+   ========================================================= */
+.benefit_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--grid-gap);
+}
+
+.benefit_card {
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+    background: var(--color-white);
+    aspect-ratio: 416 / 334;
+}
+
+
+.benefit_visual {
+    position: relative;
+    flex: 1 1 auto;
+    padding: 16px;
+    background: linear-gradient(120deg, #E9E9E9 10%, #FAFAFA 95%);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    overflow: hidden;
+}
+
+.benefit_tag {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--color-white);
+    background: rgba(20, 20, 25, 0.55);
+    padding: 5px 12px;
+    border-radius: 999px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: (4px);
+}
+.benefit_tag::before {
+    content: "▶";
+    font-size: 8px;
+}
+.benefit img{
+    max-width: 85%;
+    max-height: 80%;
+    object-fit: contain;
+    margin-top: 12px;
+    z-index: 1;
+}
+/* 카드 하단 26% : 날짜/제목/가격이 담기는 흰색 정보 영역 */
+.benefit_body {
+    flex: 0 0 auto;
+    padding: 14px 20px 18px;
+    background: var(--color-white);
+    border-top: 1px solid var(--color-border);
+    position: relative;
+    z-index: 3;
+}
+
+.benefit_date { font-size: 13px; color: var(--color-sub); margin-bottom: 8px; }
+
+.benefit_row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.benefit_title { font-size: 18px; font-weight: 700; color: var(--color-ink); }
+.benefit_price { font-size: 18px; font-weight: 800; color: var(--color-main); white-space: nowrap; }
+
+/* 카드별 비주얼 컬러 (Figma 시안 그라데이션 순서 그대로) */
+.benefit_card:nth-child(1) .benefit_visual { background: linear-gradient(120.4deg, #73A5F6 9.28%, #F9FBFF 95.1%); }
+.benefit_card:nth-child(2) .benefit_visual { background: linear-gradient(297.14deg, #FFFFFF -12.02%, #BFE5F9 119.65%); }
+.benefit_card:nth-child(3) .benefit_visual { background: radial-gradient(99.64% 73.5% at 45.55% 38.17%, #FFFFFF 27.67%, #7FE3A6 100%); }
+.benefit_card:nth-child(4) .benefit_visual { background: linear-gradient(111.83deg, #FFA08F 9.94%, #FFFFFF 97.42%); }
+.benefit_card:nth-child(5) .benefit_visual { background: linear-gradient(289.77deg, #FFFFFF -4.05%, #FFF0B2 105.15%); }
+.benefit_card:nth-child(6) .benefit_visual { background: linear-gradient(121.64deg, #FFC3BE -34.55%, #FFFFFF 108.76%); }
+
+/* =========================================================
+   Guide map : map 참조 비율 320x350, tab 사이즈 92x40 / r8 / fs16
+   ========================================================= */
+.map_tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.tab_btn {
+    flex: 0 0 auto;
+    width: 92px;
+    height: 40px;
+    border: none;
+    background: var(--color-cream);
+    color: var(--color-ink);
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+.tab_btn.is-active {
+    background: var(--color-main);
+    border-color: var(--color-main);
+    color: var(--color-white);
+}
+
+.map_area {
+    width: 100%;
+    /* aspect-ratio: 320 / 350; */
+    height: 550px;
+    border-radius: var(--radius-lg);
+    background: var(--color-cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-sub);
+    font-weight: 700;
+}
+
+/* =========================================================
+   Footer
+   ========================================================= */
+footer {
+    margin-top: 80px;
+    padding: 32px 0 60px;
+    border-top: 1px solid var(--color-border);
+}
+
+.footer_link { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 14px; }
+.footer_link a { font-size: 14px; font-weight: 700; color: var(--color-ink); }
+.footer_link a.footer_link--accent { color: var(--color-main); }
+
+.footer_info {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 6px 0;
+    font-size: 14px;
+    color: var(--color-sub);
+}
+.footer_info span {
+    padding: 0 12px;
+    border-left: 1px solid var(--color-border);
+}
+.footer_info span:first-child {
+    padding-left: 0;
+    border-left: none;
+}
+
+.footer_copyright { margin: 14px 0 0; font-size: 14px; color: var(--color-sub); }
+
+/* =========================================================
+   TABLET  (601px ~ 1024px)
+   기준폭 1024 / margin 16 / gutter 16 / 8 columns
+   ========================================================= */
+@media (max-width: 1024px) {
+    :root {
+        --container-max: 1024px;
+        --container-pad: 16px;
+        --grid-gap: 16px;
+    }
+
+    /* ---------- Header : 로고/예매·로그인 숨기고 햄버거+검색 아이콘만 ---------- */
+    .header_box,
+    .auth_menu { display: none; }
+    .menu_toggle,
+    .search_toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 54px;
+        height: 54px;
+    }
+    header { margin: 8px auto; padding: 0 var(--container-pad); }
+    .header_nav_menu ul { gap: 26px; }
+    .header_nav_menu li { font-size: 24px; font-weight: 500; }
+
+    /* ---------- 오늘의 이월드 (날씨 요약) ---------- */
+    .quick_item--weather { display: none; }
+    .today_weather { display: flex; }
+
+    .label_full { display: none; }
+    .label_short { display: inline; }
+
+    .quick_bar_box { margin-top: 0; }
+    .quick_bar { margin-top: 16px; }
+
+    /* ---------- Section 공통 ---------- */
+    main.container section { margin-top: 48px; }
+    h3 { font-size: 28px; }
+    .more_btn { width: 24px; height: 24px; font-size: 20px; }
+
+    /* ---------- 베스트 어트랙션 : 가로 스크롤 캐러셀, 마스코트 자리 숨김 ---------- */
+    .atrraction_grid {
+        display: flex;
+        gap: 12px;
+        overflow-x: auto;
+        padding-bottom: 4px;
+    }
+    .attraction_deco { display: none; }
+    .attraction-card {
+        flex: 0 0 236px;
+        aspect-ratio: 236 / 314;
+    }
+    .attraction-card4{
+        background-image: url(img/attraction_tam.jpg);
+    }
+    .attraction-card--tablet-only { display: block; }
+    /* 스크린샷 순서: 회전목마 → 범퍼카 → 탬버린 → 메가스윙360 */
+    .atrraction_grid > .attraction-card:nth-child(2) { order: 2; } /* 범퍼카 */
+    .atrraction_grid > .attraction-card:nth-child(3) { order: 4; } /* 메가스윙360 */
+    .atrraction_grid > .attraction-card:nth-child(4) { order: 1; } /* 회전목마 */
+    .atrraction_grid > .attraction-card:nth-child(5) { order: 3; } /* 탬버린 */
+    .attraction_name { font-size: 20px; }
+    .attraction_info { height: 90px; padding: 10px 14px 12px; }
+    .attraction_info p { font-size: 12px; margin-top: 8px; }
+
+    /* ---------- 페이지 배치 : 배너 2개를 어트랙션 바로 아래, 나란히 ---------- */
+    main.container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: var(--grid-gap);
+    }
+    main.container > section:nth-of-type(1) { grid-column: 1 / -1; grid-row: 1; }
+    main.container > section:nth-of-type(2) { grid-column: 1; grid-row: 2; } /* 배너1 */
+    main.container > section:nth-of-type(4) { grid-column: 2; grid-row: 2; } /* 배너2 */
+    main.container > section:nth-of-type(3) { grid-column: 1 / -1; grid-row: 3; } /* 혜택 */
+    main.container > section:nth-of-type(5) { grid-column: 1 / -1; grid-row: 4; } /* 가이드맵 */
+
+    /* commercial */
+    .commercial_row{
+        display: flex;
+        justify-content: center;
+        gap: var(--grid-gap);
+    }
+    .commercial_banner{
+        width: 488px;
+        height: 250px;
+        aspect-ratio: auto;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        flex-direction: 0 0 auto;
+    }
+
+
+
+    /* ---------- 이월드 할인혜택 : 큰 카드 1개 + 압축형 2개(위/아래) ---------- */
+    .benefit_grid {
+        display: grid;
+        grid-template-columns: 1.1fr 1.7fr;
+        grid-template-rows: 145px 145px;
+        gap: 14px;
+        height: 304px;
+    }
+    .benefit_card { 
+        aspect-ratio: auto; 
+        height: 100%;
+    }
+    .benefit_card:nth-child(1) { 
+        grid-column: 1; 
+        grid-row: 1 / span 2; 
+        height: 304px;
+    }
+    .benefit_card:nth-child(2) { 
+        grid-column: 2; 
+        grid-row: 1; 
+        flex-direction: row; 
+        height: 145px;
+    }
+    .benefit_card:nth-child(3) { 
+        grid-column: 2; 
+        grid-row: 2; 
+        flex-direction: row; 
+        height: 145px;
+    }
+
+    .benefit_card:nth-child(n+4) { display: none; }
+
+    .benefit_card:nth-child(2) .benefit_body,
+    .benefit_card:nth-child(3) .benefit_body {
+        flex: 0 0 170px;
+        border-top: none;
+        border-left: 1px solid var(--color-border);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .benefit_card:nth-child(2) .benefit_row,
+    .benefit_card:nth-child(3) .benefit_row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+    .benefit_visual img{
+        max-width: 100%;
+        max-height: 90%;
+        object-fit: cover;
+    }
+
+    /* ---------- 이월드 가이드맵 ---------- */
+    .tab_btn { width: 110px; height: 34px; font-weight: 500; }
+    .map_area { height: 452px; }
+}
+
+/* =========================================================
+   MOBILE  (<=600px)
+   기준폭 360 / margin 10 / gutter 12 / 4 columns
+   ========================================================= */
+@media (max-width: 760px) {
+    :root {
+        --container-max: 100%;
+        --container-pad: 12px;
+        --grid-gap: 12px;
+    }
+    .mobile_subnav ul{
+        display: flex;
+        gap: 20px;
+    }
+
+    .header_tablet { display: none; }
+    .header_mobile { display: block; }
+
+    .mobile_top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 16px 10px;
+    }
+
+    .logo_mobile { font-weight: 900; font-size: 20px; color: var(--color-sky); }
+
+    .mobile_icons { display: flex; gap: 14px; }
+
+    .mobile_subnav ul {
+        display: flex;
+        gap: 22px;
+        padding: 0 16px 12px;
+    }
+
+    .mobile_subnav li {
+        font-weight: 700;
+        font-size: 15px;
+        color: var(--color-sub);
+        padding-bottom: 8px;
+    }
+
+    .mobile_subnav li.is-active {
+        color: var(--color-ink);
+        border-bottom: 2px solid var(--color-ink);
+    }
+
+    .quick_bar_box { margin-top: -24px; }
+
+    /* 태블릿 전용 2단 배치(배너 나란히)는 좁은 화면에서 다시 세로 1단으로 */
+    main.container {
+        display: block;
+    }
+    main.container > section {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .quick_bar { padding: 14px 6px; overflow-x: auto; }
+
+    .quick_item { min-width: 68px; }
+
+    .quick_icon { width: 36px; height: 36px; font-size: 16px; }
+    .quick_item span { font-size: 11px; }
+
+    .today_weather {
+        flex-wrap: wrap;
+        gap: 8px 16px;
+        font-size: 13px;
+    }
+
+    .section_title h3,
+    h3 { font-size: 22px; }
+
+    .atrraction_grid { grid-template-columns: repeat(3, 1fr); }
+    .attraction_info { padding: 12px 12px 14px; }
+    .attraction_name { font-size: 14px; }
+
+    .commercial_row { grid-template-columns: repeat(2, 1fr); }
+
+    .benefit_grid { grid-template-columns: repeat(2, 1fr); }
+    .benefit_card { aspect-ratio: auto; }
+    .benefit_visual { padding: 12px; }
+    .benefit_body { padding: 12px 14px 14px; }
+    .benefit_price { font-size: 17px; }
+
+    .tab_btn { width: 80px; height: 36px; font-size: 14px; }
+
+    main.container section { margin-top: 36px; }
+
+    .map_area{
+        height: 450px;
+    }
+    
+}

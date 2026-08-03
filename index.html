@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eworld_mainPC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet"><!-- 폰트 -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" /><!-- 지도 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"><!-- fontawesome -->
+    <link rel="stylesheet" href="/eworld/css/main.css">
+    
+</head>
+<body>
+    <!-- header -->
+     <header>
+        <button type="button" class="menu_toggle" aria-label="전체메뉴">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="header_box">
+            <a href="/eworld/index.html"><div class="logo">E-world</div></a>
+        </div>
+        <nav class="header_nav_menu">
+            <ul>
+                <li><a href="/eworld/sub/attraction.html">즐길거리</a></li>
+                <li><a href="#">시설정보</a></li>
+                <li><a href="#">요금혜택</a></li>
+                <li><a href="#">이용가이드</a></li>
+                <li><a href="#">소통서비스</a></li>
+            </ul>
+        </nav>
+        <div class="auth_menu">
+            <ul>
+                <li><a href="/eworld/sub/booking.html">예매하기</a></li>
+                <li><a href="#">로그인</a></li>
+            </ul>
+        </div>
+        <button type="button" class="search_toggle" aria-label="검색">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+     </header>
+    <!-- //header -->
+
+    <!-- herosection -->
+    <div class="hero-wrapper">
+        <div class="hero-box">
+            <a href="#">
+                <img src="/eworld/img/herobanner_1.jpg" alt="herobanner_img1">
+            </a>
+            <button type="button" class="hero_nav hero_nav--prev" aria-label="이전 배너">‹</button>
+            <button type="button" class="hero_nav hero_nav--next" aria-label="다음 배너">›</button>
+            <div class="hero_counter">
+                <span>1 / 6</span>
+                <button type="button" class="hero_pause" aria-label="슬라이드 정지">❙❙</button>
+            </div>
+        </div>
+        <div class="quick_bar_box">
+            <div class="today_weather">
+                <h4 class="tw_title">오늘의 이월드</h4>
+                <div class="tw_row">
+                    <span class="tw_icon"><i class="fa-solid fa-cloud"></i></span>
+                    <span class="tw_temp">20<span class="tw_deg">°C</span></span>
+                    <span class="tw_label">운영시간</span>
+                    <span class="tw_hours">8시~21시</span>
+                </div>
+            </div>
+            <div class="quick_bar">
+                <div class="quick_item quick_item--weather">
+                    <div class="quick_icon">☁️</div>
+                    <div class="quick_temp">20<span class="quick_deg">℃</span></div>
+                    <span>오늘의 이월드</span>
+                </div>
+                <div class="quick_item">
+                    <div class="quick_icon">🎟️</div>
+                    <span>티켓예매</span>
+                </div>
+                <div class="quick_item">
+                    <div class="quick_icon">🛍️</div>
+                    <span class="label_full">온라인 굿즈스토어</span>
+                    <span class="label_short">굿즈스토어</span>
+                </div>
+                <div class="quick_item">
+                    <div class="quick_icon">%</div>
+                    <span>이달의 혜택</span>
+                </div>
+                <div class="quick_item">
+                    <div class="quick_icon">👥</div>
+                    <span>단체 예매</span>
+                </div>
+                <div class="quick_item">
+                    <div class="quick_icon">📅</div>
+                    <span>운영 / 운휴</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //herosection -->
+
+    <!-- main -->
+     <main class="container">
+        <!-- best_attraction -->
+        <section>
+            <div class="section_title">
+                <h3>이월드 베스트 어트랙션</h3>
+                <a href="#" class="more_btn" aria-label="더보기">›</a>
+            </div>
+            <div class="atrraction_grid">
+                <div class="attraction_deco" aria-hidden="true"></div>
+                <div class="attraction-card">
+                    <div class="attraction-card1">
+                        <div class="attraction_info">
+                            <div class="attraction_name">범퍼카</div>
+                            <p>다 때려박아 범퍼카</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="attraction-card">
+                    <div class="attraction-card2">
+                        <div class="attraction_info">
+                            <div class="attraction_name">메가스윙 360</div>
+                            <p>360도 회전스윙을 즐기는 놀이기구</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="attraction-card">
+                    <div class="attraction-card3">
+                        <div class="attraction_info">
+                            <div class="attraction_name">회전목마</div>
+                            <p>빙글빙글 돌아가는 회전목마</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="attraction-card attraction-card--tablet-only">
+                    <div class="attraction-card4">
+                        <div class="attraction_info">
+                            <div class="attraction_name">탬버린</div>
+                            <p>엉덩이 통통통 찧어도 신나는 디스코장!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //best_attraction -->
+
+        <!-- commercial banner-->
+         <section>
+            <div class="commercial_banner">
+                <img src="img/commercial_banner1.jpg" alt="commercial_banner1">
+            </div>
+         </section>
+        <!-- //commercial banner -->
+
+        <!-- benefit -->
+         <section>
+            <div class="section_title">
+                <h3>이월드 할인혜택</h3>
+                <a href="#" class="more_btn" aria-label="더보기">›</a>
+            </div>
+            <div class="benefit_grid">
+                <div class="benefit_card">
+                    <div class="benefit_visual">
+                        <span class="benefit_tag">이달의 혜택</span>
+                        <img src="img/main_1.png" alt="main1">
+                    </div>
+                    <div class="benefit_body">
+                        <div class="benefit_date">2026. 7. 1  ~  2026. 7. 31</div>
+                        <div class="benefit_row">
+                            <div class="benefit_title">프로 야구 유니폼 할인</div>
+                            <div class="benefit_price">30,900원</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="benefit_card">
+                    <div class="benefit_visual">
+                        <span class="benefit_tag">이달의 혜택</span>
+                        <img src="img/main_2.png" alt="main2">
+                    </div>
+                    <div class="benefit_body">
+                        <div class="benefit_date">2026. 7. 1  ~  2026. 7. 31</div>
+                        <div class="benefit_row">
+                            <div class="benefit_title">아이엠뱅크 제휴할인</div>
+                            <div class="benefit_price">29,400원</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="benefit_card">
+                    <div class="benefit_visual">
+                        <span class="benefit_tag">이달의 혜택</span>
+                        <img src="img/sub6.png" alt="mainn">
+                    </div>
+                    <div class="benefit_body">
+                        <div class="benefit_date">2026. 7. 1  ~  2026. 7. 31</div>
+                        <div class="benefit_row">
+                            <div class="benefit_title">네이버페이 결제 할인</div>
+                            <div class="benefit_price">24,500원</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="benefit_card">
+                    <div class="benefit_visual">
+                        <span class="benefit_tag">이달의 혜택</span>
+                        <img src="img/main_3.png" alt="main3">
+                    </div>
+                    <div class="benefit_body">
+                        <div class="benefit_date">2026. 7. 1  ~  2026. 7. 31</div>
+                        <div class="benefit_row">
+                            <div class="benefit_title">KT 멤버십 할인</div>
+                            <div class="benefit_price">29,400원</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="benefit_card">
+                    <div class="benefit_visual">
+                        <span class="benefit_tag">연간 혜택</span>
+                        <img src="img/main_4.png" alt="main4">
+                    </div>
+                    <div class="benefit_body">
+                        <div class="benefit_date">2026. 1. 1  ~  2026. 12. 31</div>
+                        <div class="benefit_row">
+                            <div class="benefit_title">생일자 할인</div>
+                            <div class="benefit_price">24,500원</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="benefit_card">
+                    <div class="benefit_visual">
+                        <span class="benefit_tag">연간 혜택</span>
+                        <img src="img/main_5.png" alt="main5">
+                    </div>
+                    <div class="benefit_body">
+                        <div class="benefit_date">2026. 1. 1  ~  2026. 12. 31</div>
+                        <div class="benefit_row">
+                            <div class="benefit_title">금요일 교복데이 할인</div>
+                            <div class="benefit_price">24,500원</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </section>
+        <!-- //benefit -->
+
+        <!-- commercial_banner -->
+         <section>
+            <div class="commercial_banner">
+                <img src="img/commercial_banner2.jpg" alt="commercial_banner2">
+            </div>
+         </section>
+        <!-- commercial_banner -->
+        <!-- guide_map -->
+         <section>
+            <h3>이월드 가이드맵</h3>
+            <div class="map_tabs">
+                <button class="tab_btn is-active">전체코스</button>
+                <button class="tab_btn">어린이코스</button>
+                <button class="tab_btn">겁쟁이코스</button>
+                <button class="tab_btn">스릴코스</button>
+            </div>
+            <div class="map_area">
+                <div id="eworld_map" class="map_area"></div>
+                <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+                <script>
+                    // 대구 달서구 두류공원로 200 (이월드 위도/경도)
+                    var eworldLat = 35.853216;
+                    var eworldLng = 128.563811;
+
+                    // 지도 생성 및 위치 고정 (확대 레벨: 16)
+                    var map = L.map('eworld_map').setView([eworldLat, eworldLng], 16);
+
+                    // 타일 이미지 불러오기 (OpenStreetMap)
+                    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        maxZoom: 19,
+                        attribution: '&copy; OpenStreetMap'
+                    }).addTo(map);
+
+                    // 이월드 위치에 핀(마커) 찍기
+                    var marker = L.marker([eworldLat, eworldLng]).addTo(map);
+                    
+                    // 마커 클릭 시 뜰 안내 말풍선
+                    marker.bindPopup("<b>이월드</b><br>대구 달서구 두류공원로 200").openPopup();
+                </script>
+            </div>
+         </section>
+        <!-- guide_map -->
+     </main>
+    <!-- //main -->
+
+    <!-- footer -->
+     <footer>
+        <div class="container">
+            <div class="footer_link">
+                <a href="#">이월드 소개</a>
+                <a href="#">이용약관</a>
+                <a href="#" class="footer_link--accent">개인정보처리방침</a>
+                <a href="#">이메일 무단수집거부</a>
+                <a href="#">제휴&amp;입점</a>
+            </div>
+            <p class="footer_info">
+                <span>대구광역시 달서구 두류공원로 200 (주)이월드</span>
+                <span>종합안내전화 070-7549-8112</span>
+                <span>연간회원문의 카톡채널/이월드연간회원</span>
+            </p>
+            <p class="footer_info">
+                <span>대표이사 : 박동진</span>
+                <span>사업자등록번호 503-81-68487</span>
+                <span>통신판매신고번호 제2011-대구달서-0301호</span>
+            </p>
+            <p class="footer_copyright">COPYRIGHT© E-WORLD. ALL RIGHTS RESERVED.</p>
+        </div>
+     </footer>
+    <!-- //footer -->
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E_world_booking</title>
+    <link rel="stylesheet" href="/eworld/css/booking.css">
+</head>
+<body>
+    <!-- header -->
+     <header>
+        <div class="header_box">
+            <a href="/eworld/index.html"><div class="logo">E-world</div></a>
+        </div>
+        <nav class="header_nav_menu">
+            <ul>
+                <li><a href="#">즐길거리</a></li>
+                <li><a href="#">시설정보</a></li>
+                <li><a href="#">요금혜택</a></li>
+                <li><a href="#">이용가이드</a></li>
+                <li><a href="#">소통서비스</a></li>
+            </ul>
+        </nav>
+        <div class="auth_menu">
+            <ul>
+                <li><a href="/eworld/sub/booking.html">예매하기</a></li>
+                <li><a href="#">로그인</a></li>
+            </ul>
+        </div>
+     </header>
+    <!-- //header -->
+    
+    <!-- main -->
+    <main class="container">
+     <!-- selection_bar -->
+      <section class="info_bar_box">
+        <div class="info_item date_picker">
+            <label for="visit_date">방문예정일</label>
+            <input type="date" id="visit_date" name="visit_date">
+        </div>
+        <div class="info_item_hours">
+            <span class="label">운영시간</span>
+            <span class="time_text">10 : 00 ~ 21 : 00 </span>
+        </div>
+      </section>
+     <!-- //selection_bar -->
+     <!--  ticket_select_bar-->
+       <nav class="ticket_tab_menu">
+        <ul>
+            <li class="tab_item is-active"><button type="button">종합이용권</button></li>
+            <li class="tab_item"><button type="button">연간이용권</button></li>
+            <li class="tab_item"><button type="button">야간이용권</button></li>
+            <li class="tab_item"><button type="button">축제이용권</button></li>
+            <li class="tab_item"><button type="button">83타워이용권</button></li>
+        </ul>
+       </nav>
+     <!--  //ticket_select_bar-->
+     
+     <!-- booking_layout -->
+      <div class="booking_layout">
+        <aside class="filter_sidebar">
+            <div class="filter_title">
+                <span>혜택필터</span>
+                <span class="arrow_icon">v</span>
+            </div>
+            <ul class="filter_list">
+                <li class="filter_item is-active"><a href="#">이달의 혜택</a></li>
+                <li class="filter_item"><a href="#">제휴 카드</a></li>
+                <li class="filter_item"><a href="#">통신사 멤버십</a></li>
+                <li class="filter_item"><a href="#">카드사 포인트</a></li>
+            </ul>
+        </aside>
+
+        <div class="selection_bar">
+            <div class="select_box_headcount">
+                <label for="headcount">인원 / 수량</label>
+                <select name="headcount" id="headcoung">
+                    <option value="0">0명</option>
+                    <option value="0">1명</option>
+                    <option value="0">2명</option>
+                    <option value="0">3명</option>
+                    <option value="0">4명</option>
+                </select>
+            </div>
+            <div class="total_price_box">
+                <span class="label">결제예정금액</span>
+                <span class="price">0원</span>
+            </div>
+        </div>
+      </div>
+     <!-- //booking_layout -->
+
+     <!-- ticket_items -->
+      <div class="ticket_list">
+        <!-- itembox1 -->
+         <div class="ticket_card">
+            <div class="ticket_thumb">
+                <img src="/eworld/img/sub1.png" alt="이달의 특가 할인">
+            </div>
+            <div class="ticket_info">
+                <span class="ticket_date">2026.07.01 ~ 2026.07.31</span>
+                <h4 class="ticket_title">이달의 특가 할인</h4>
+                <p class="ticket_desc">온라인 전용 할인</p>
+            </div>
+            <div class="ticket_price_box">
+                <span class="original_price">40,900원</span>
+                <span class="discount_price">30,900원</span>
+            </div>
+            <div class="ticket_btn_group">
+                <button type="button" class="btn_buy">예매하기</button>
+                <button type="button" class="btn_detail">상세보기</button>
+            </div>
+         </div>
+        <!-- itembox1 -->
+         <div class="ticket_card">
+            <div class="ticket_thumb">
+                <img src="/eworld/img/sub2.png" alt="7월 학생증 할인">
+            </div>
+            <div class="ticket_info">
+                <span class="ticket_date">2026.07.01 ~ 2026.07.31</span>
+                <h4 class="ticket_title">7월 학생증 할인</h4>
+                <p class="ticket_desc">현장 + 온라인 할인</p>
+            </div>
+            <div class="ticket_price_box">
+                <span class="original_price">40,900원</span>
+                <span class="discount_price">25,900원</span>
+            </div>
+            <div class="ticket_btn_group">
+                <button type="button" class="btn_buy">예매하기</button>
+                <button type="button" class="btn_detail">상세보기</button>
+            </div>
+         </div>
+         <div class="ticket_card">
+            <div class="ticket_thumb">
+                <img src="/eworld/img/sub3.png" alt="7월 평일 스페셜 특가">
+            </div>
+            <div class="ticket_info">
+                <span class="ticket_date">2026.07.01 ~ 2026.07.3</span>
+                <h4 class="ticket_title">7월 평일 스페셜 특가</h4>
+                <p class="ticket_desc">온라인 전용 할인</p>
+            </div>
+            <div class="ticket_price_box">
+                <span class="original_price">40,900원</span>
+                <span class="discount_price">27,900원</span>
+            </div>
+            <div class="ticket_btn_group">
+                <button type="button" class="btn_buy">예매하기</button>
+                <button type="button" class="btn_detail">상세보기</button>
+            </div>
+         </div>
+         <div class="ticket_card">
+            <div class="ticket_thumb">
+                <img src="/eworld/img/sub4.png" alt="7월 스페셜 패밀리 특가">
+            </div>
+            <div class="ticket_info">
+                <span class="ticket_date">2026.07.01 ~ 2026.07.31</span>
+                <h4 class="ticket_title">7월 스페셜 패밀리 특가</h4>
+                <p class="ticket_desc">현장 전용 할인</p>
+            </div>
+            <div class="ticket_price_box">
+                <span class="original_price">98,000원</span>
+                <span class="discount_price">54,900원</span>
+            </div>
+            <div class="ticket_btn_group">
+                <button type="button" class="btn_buy">예매하기</button>
+                <button type="button" class="btn_detail">상세보기</button>
+            </div>
+         </div>
+         <div class="ticket_card">
+            <div class="ticket_thumb">
+                <img src="/eworld/img/sub5.png" alt="E멤버 제휴 할인">
+            </div>
+            <div class="ticket_info">
+                <span class="ticket_date">2026.07.01 ~ 2026.07.31</span>
+                <h4 class="ticket_title">E멤버 제휴 할인</h4>
+                <p class="ticket_desc">현장 전용 할인</p>
+            </div>
+            <div class="ticket_price_box">
+                <span class="original_price">40,900원</span>
+                <span class="discount_price">29,400원</span>
+            </div>
+            <div class="ticket_btn_group">
+                <button type="button" class="btn_buy">예매하기</button>
+                <button type="button" class="btn_detail">상세보기</button>
+            </div>
+         </div>
+         <div class="ticket_card">
+            <div class="ticket_thumb">
+              <img src="/eworld/img/sub6.png" alt="네이버페이 결제 할인">
+            </div>
+            <div class="ticket_info">
+              <span class="ticket_date">2026.07.01 ~ 2026.07.31</span>
+              <h4 class="ticket_title">네이버페이 결제 할인</h4>
+              <p class="ticket_desc">현장 전용 할인</p>
+            </div>
+            <div class="ticket_price_box">
+              <span class="original_price">40,900원</span>
+              <span class="discount_price">24,500원</span>
+            </div>
+            <div class="ticket_btn_group">
+              <button type="button" class="btn_buy">예매하기</button>
+              <button type="button" class="btn_detail">상세보기</button>
+            </div>
+        </div>
+      </div>
+     <!-- //ticket_items -->
+    </main>
+    <!-- //main -->
+    <!-- footer -->
+    <footer>
+        <div class="container">
+            <div class="footer_link">
+                <a href="#">이용약관</a>
+                <a href="#">개인정보처리방침</a>
+                <a href="#">이메일무단수집거부</a>
+            </div>
+            <p>(주)이월드 | 대구광역시 달서구 두류공원로 200</p>
+            <p>Copyright © E-WORLD. All Rights Reserved.</p>
+        </div>
+     </footer>
+    <!-- //footer -->
+
+    <script>
+        // 혜택필터 드롭다운 토글
+        const filterSidebar = document.querySelector('.filter_sidebar');
+        const filterTitle = document.querySelector('.filter_title');
+
+        filterTitle.addEventListener('click', () => {
+            filterSidebar.classList.toggle('is-open');
+        });
+
+        // 사이드바 바깥 영역 클릭 시 드롭다운 닫기
+        document.addEventListener('click', (e) => {
+            if (!filterSidebar.contains(e.target)) {
+                filterSidebar.classList.remove('is-open');
+            }
+        });
+    </script>
+</body>
+</html>

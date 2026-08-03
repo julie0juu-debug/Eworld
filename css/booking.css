@@ -1,0 +1,524 @@
+
+   /* E-World Reservation Page CSS */
+
+
+:root {
+  --font-base: 'Noto Sans', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Color Palette */
+  --color-primary: #ffa300;       /* 오렌지 포인트 컬러 */
+  --color-primary-light: #fff8e7; /* 크림색 배경 */
+  --color-ink: #222222;
+  --color-sub: #767676;
+  --color-border: #e2e8f0;
+  --color-white: #ffffff;
+
+  --radius-lg: 16px;
+  --radius-md: 10px;
+  --radius-sm: 6px;
+
+  --container-max: 1280px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-base);
+}
+
+body {
+  font-family: var(--font-base);
+  color: var(--color-ink);
+  background: #ffffff;
+  line-height: 1.5;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+input, select { font-family: inherit; }
+
+/*  1280px 메인 컨테이너 */
+.container {
+  width: var(--container-max);
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+/* =========================================================
+   1. Header
+   ========================================================= */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.logo {
+  font-weight: 900;
+  font-size: 24px;
+  color: var(--color-primary);
+}
+
+.header_nav_menu { flex: 1; }
+.header_nav_menu ul {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+}
+.header_nav_menu li a {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.auth_menu ul {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   2. Selection Bar (방문예정일 & 운영시간)
+   ========================================================= */
+.info_bar_box {
+  background: var(--color-primary-light);
+  border-radius: var(--radius-lg);
+  padding: 18px 32px;
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.date_picker,
+.info_item_hours {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  border: 1px solid #f3e8d2;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.date_picker { flex: 1.5; }
+.date_picker label { color: var(--color-ink); margin-right: 12px; }
+.date_picker input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: var(--color-sub);
+  cursor: pointer;
+}
+
+.info_item_hours { flex: 1; }
+.info_item_hours .time_text {
+  color: var(--color-ink);
+  font-weight: 800;
+}
+
+/* =========================================================
+   3. Ticket Select Bar (탭 메뉴)
+   ========================================================= */
+.ticket_tab_menu {
+  margin-bottom: 30px;
+}
+.ticket_tab_menu ul {
+  display: flex;
+  gap: 12px;
+}
+.tab_item button {
+  padding: 14px 28px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  color: var(--color-sub);
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 14px;
+  transition: all 0.2s;
+}
+/* is-active 상태도 기본값은 일반 tab_item과 동일하게 유지하고,
+   마우스 오버(hover) 또는 클릭(active)했을 때만 포인트 컬러로 변경 */
+.tab_item button:hover,
+.tab_item button:active {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* =========================================================
+   4. Booking Layout (사이드바 & 인원선택 바)
+   ========================================================= */
+.booking_layout {
+  display: flex;
+  gap: 24px;
+  align-items: stretch; /* 사이드바 & 인원선택바 높이 자동으로 맞춤 */
+  margin-bottom: 32px; /* selection_bar와 ticket_list 사이 간격 */
+}
+
+/* 4-1. 사이드바 (혜택필터) */
+.filter_sidebar {
+  position: relative; /* 드롭다운 기준점 */
+  width: 320px;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  cursor: pointer;
+}
+
+.filter_title {
+  height: 100%;
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: 18px 24px;
+  font-weight: 800;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: var(--radius-md);
+}
+
+.arrow_icon {
+  transition: transform 0.2s;
+}
+
+/* 기본 상태: "혜택필터" 타이틀만 보이도록 목록 숨김 */
+.filter_list {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  overflow: hidden;
+  z-index: 10;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* "v" 클릭 시 filter_sidebar에 is-open 클래스를 토글하면 드롭다운이 열립니다.
+   (버튼 클릭 이벤트로 .filter_sidebar.classList.toggle('is-open') 형태의 JS 필요) */
+.filter_sidebar.is-open .filter_list {
+  display: block;
+}
+.filter_sidebar.is-open .arrow_icon {
+  transform: rotate(180deg);
+}
+
+.filter_list .filter_item a {
+  display: block;
+  padding: 16px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #444;
+  border-bottom: 1px solid var(--color-border);
+  transition: background 0.15s;
+}
+.filter_list .filter_item:last-child a {
+  border-bottom: none;
+}
+.filter_list .filter_item.is-active a,
+.filter_list .filter_item a:hover {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+/* 4-2. 우측 상단 인원/수량 & 결제금액 바 */
+.selection_bar {
+  flex: 1; /* 남은 너비를 모두 채움 (사이드바 320px + gap 24px 제외) */
+  background: var(--color-primary-light);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.select_box_headcount,
+.total_price_box {
+  background: var(--color-white);
+  border: 1px solid #f3e8d2;
+  border-radius: var(--radius-sm);
+  padding: 14px 20px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.select_box_headcount select {
+  border: none;
+  outline: none;
+  color: var(--color-primary);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.total_price_box .price {
+  color: var(--color-primary);
+  font-size: 15px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   5. Ticket Items (전체 너비로 표시 — 사이드바 폭에 밀리지 않음)
+   ========================================================= */
+.ticket_list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ticket_card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 24px 28px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s, box-shadow 0.2s;
+  
+}
+
+.ticket_card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* 썸네일 박스 */
+.ticket_thumb {
+  width: 110px;
+  height: 110px;
+  /* background: #edf2f7; */
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ticket_thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+  
+/* 티켓 내용 정보 */
+.ticket_info {
+  flex: 1;
+}
+.ticket_date {
+  font-size: 14px;
+  color: #a0aec0;
+  display: block;
+  margin-bottom: 2px;
+}
+.ticket_title {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--color-ink);
+  margin-bottom: 2px;
+}
+.ticket_desc {
+  font-size: 16px;
+  color: var(--color-sub);
+}
+
+/* 가격 표시 */
+.ticket_price_box {
+  text-align: right;
+  min-width: 100px;
+}
+.original_price {
+  display: block;
+  font-size: 18px;
+  color: #cbd5e1;
+  text-decoration: line-through;
+}
+.discount_price {
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--color-primary);
+}
+
+/* 오른쪽 우측 버튼 그룹 */
+.ticket_btn_group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 191px;
+  flex-shrink: 0;
+}
+
+.btn_buy {
+  background: var(--color-primary-light);
+  color: var(--color-ink);
+  width: 191px;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  font-size: 18px;
+  font-weight: 700;
+  transition: background 0.15s;
+}
+.btn_buy:hover {
+  background: #ffe3b3;
+}
+
+.btn_detail {
+  background: #f1f5f9;
+  color: var(--color-sub);
+  width: 191px;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  font-size: 18px;
+  font-weight: 700;
+  transition: background 0.15s;
+}
+.btn_detail:hover {
+  background: var(--color-border);
+}
+
+/* =========================================================
+   6. Footer
+   ========================================================= */
+footer {
+  margin-top: 80px;
+  padding: 40px 0;
+  border-top: 1px solid var(--color-border);
+  font-size: 12px;
+  color: var(--color-sub);
+}
+.footer_link {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+.footer_link a:nth-child(2) {
+  color: var(--color-primary); /* 개인정보처리방침 포인트 */
+}
+footer p {
+  margin-top: 4px;
+}
+
+/* =========================================================
+   7. Tablet Responsive (1042px 기준, 8 columns / margin 16 / gutter 16)
+   ========================================================= */
+@media (max-width: 1042px) {
+
+  .container {
+    width: 100%;
+    padding: 24px 16px; /* 그리드 margin 16px */
+  }
+
+  /* ---- Header: 로고 & 예매/마이페이지 메뉴 숨기고 햄버거 아이콘으로 대체 ---- */
+  header {
+    width: 100%;
+    padding: 16px;
+    position: relative;
+    justify-content: center;
+  }
+  .logo,
+  .auth_menu {
+    display: none;
+  }
+  header::before {
+    content: "";
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    width: 24px;
+    height: 2px;
+    background: var(--color-ink);
+    box-shadow: 0 7px 0 var(--color-ink), 0 -7px 0 var(--color-ink);
+  }
+  .header_nav_menu ul {
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .header_nav_menu li a {
+    font-size: 16px;
+  }
+
+  /* ---- 방문예정일 / 운영시간 ---- */
+  .info_bar_box {
+    padding: 16px;
+    gap: 16px; /* gutter */
+  }
+  .date_picker,
+  .info_item_hours {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  /* ---- 이용권 탭 메뉴 ---- */
+  .ticket_tab_menu ul {
+    gap: 16px; /* gutter */
+    flex-wrap: wrap;
+  }
+  .tab_item button {
+    padding: 10px 18px;
+    font-size: 14px;
+    border-radius: 10px;
+  }
+
+  /* ---- 혜택필터 & 인원/수량 바: 세로로 쌓임 (각각 grid 8/8) ---- */
+  .booking_layout {
+    flex-direction: column;
+    gap: 16px; /* gutter */
+    margin-bottom: 16px;
+  }
+  .filter_sidebar {
+    width: 100%;
+  }
+  .selection_bar {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  /* ---- 티켓 리스트 ---- */
+  .ticket_list {
+    gap: 16px; /* gutter */
+  }
+  .ticket_card {
+    padding: 16px;
+    gap: 16px; /* gutter */
+    border-radius: var(--radius-md);
+  }
+  .ticket_thumb {
+    width: 72px;
+    height: 72px;
+  }
+  .ticket_date { font-size: 12px; }
+  .ticket_title { font-size: 18px; }
+  .ticket_desc { font-size: 13px; }
+  .original_price { font-size: 13px; }
+  .discount_price { font-size: 20px; }
+  .ticket_btn_group {
+    width: 194px;
+  }
+  .btn_buy,
+  .btn_detail {
+    width: 194px;
+    height: 62px;
+    font-size: 16px;
+  }
+}
