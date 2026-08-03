@@ -328,16 +328,16 @@ main.container section { margin-top: 64px; }
     gap: var(--grid-gap);
 }
 .attraction-card1 {
-    background-image: url(/eworld/img/attraction_car.jpg);
+    background-image: url(img/attraction_car.jpg);
 }
 .attraction-card2 {
-    background-image: url(/eworld/img/attraction_mega.jpg);
+    background-image: url(img/attraction_mega.jpg);
 }
 .attraction-card3 {
-    background-image: url(/eworld/img/attraction_bingbing.jpg);
+    background-image: url(img/attraction_bingbing.jpg);
 }
 .attraction-card4 {
-    background-image: url(/eworld/img/attraction_tam.jpg);
+    background-image: url(img/attraction_tam.jpg);
 }
 .attraction-card1,
 .attraction-card2,
@@ -353,7 +353,7 @@ main.container section { margin-top: 64px; }
     justify-content: flex-end;
 }
 .attraction_deco{
-    background-image: url(/eworld/img/Layer\ 2.png);
+    background-image: url(img/Layer\ 2.png);
     background-size: cover;
 }
 .attraction-card {
