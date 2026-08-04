@@ -48,6 +48,11 @@ header{
     margin-top: 20px;
     margin-bottom: 20px;
 }
+.logo img{
+        display: block;
+        width: 90px;
+        height: auto;
+    }
 
 .header_nav_menu { flex: 1; }
 .header_nav_menu ul {
@@ -220,6 +225,7 @@ footer p {
         margin-top: 16px;
         margin-bottom: 16px;
     }
+    
     .logo, .auth_menu{
         display: none;
     }
@@ -269,7 +275,7 @@ footer p {
         align-items: center;
         justify-content: space-between;
         gap: 16px;
-        margin: 16;
+        margin: 16px;
         width: 100%;
 
     }

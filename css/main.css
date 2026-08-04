@@ -80,6 +80,11 @@ header {
     color: var(--color-main);
     white-space: nowrap;
 }
+.logo img{
+    display: block;
+    width: 90px;
+    height: auto;
+}
 
 .header_nav_menu { flex: 1; }
 
@@ -200,8 +205,13 @@ header {
     border-radius: 16px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     padding: 14px 12px;
+    align-content: center;
+    justify-content: space-between;
 }
-
+.weather_row{
+    display: flex;
+    flex-direction: column;
+}
 .quick_item {
     flex: 1 1 0;
     display: flex;
@@ -756,6 +766,8 @@ footer {
         font-size: 22px;
         color: var(--color-sky);
         letter-spacing: -0.5px;
+        width: 70px;
+        height: auto;
     }
 
     .mobile_icons {
@@ -985,6 +997,7 @@ footer {
         padding-bottom: 8px;
         margin-top: 12px;
         -webkit-overflow-scrolling: touch;
+        &::-webkit-scrollbar{ display: none;}
     }
 
     .attraction_deco { display: none; }
@@ -1061,6 +1074,10 @@ footer {
     .benefit_card:nth-child(5) { order: 5; }
     .benefit_card:nth-child(6) { order: 6; }
 
+    .benefit_grid .benefit_card:nth-child(n+3){
+        display: none;
+    }
+
     .benefit_visual {
         height: 140px;
         padding: 10px;
@@ -1073,7 +1090,7 @@ footer {
         line-height: 11px;
         padding: 2px 6px;
         border-radius: 4px;
-        background: rgba(255, 255, 255, 0.85);
+        background: rgba(255, 255, 255, 0.45);
         color: #000000;
     }
     .benefit_tag::before { content: ""; }
@@ -1088,6 +1105,8 @@ footer {
         background: #FFFFFF;
         border-top: 0.5px solid #EEE9E9;
         border-radius: 0 0 10px 10px;
+        display: flex;
+        flex-direction: column;
     }
 
     .benefit_date {
@@ -1097,11 +1116,13 @@ footer {
         line-height: 12px;
         color: #A8A8A8;
         margin-bottom: 4px;
+        justify-items: flex-start;
     }
 
     .benefit_row {
-        flex-direction: column;
-        align-items: flex-start;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         gap: 2px;
     }
 
@@ -1110,7 +1131,8 @@ footer {
         font-weight: 700;
         font-size: 10px;
         line-height: 14px;
-        color: #000000;
+        color: #222222;
+        justify-content: end;
     }
 
     .benefit_price {
@@ -1233,7 +1255,7 @@ footer {
 
 /* =========================================================
    Best attraction : DESKTOP 전용 자동 슬라이드 캐러셀
-   (태블릿 761~1024 / 모바일 ~760 레이아웃에는 영향 없음)
+   (태블릿 761~1024 / 모바일 ~760 )
    ========================================================= */
 @media (min-width: 1025px) {
     .atrraction_grid {
