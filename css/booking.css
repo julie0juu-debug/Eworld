@@ -40,6 +40,12 @@ body {
         height: auto;
     }
 
+.mobile_action_bar,
+.mobile_bottom_bar{
+  display: none;
+}
+
+
 .header_mobile_booking,
  .mobile_page_title{
   display: none;
