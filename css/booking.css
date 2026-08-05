@@ -40,7 +40,9 @@ body {
         height: auto;
     }
 
-
+.header_mobile_booking{
+  display: none;
+}
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 button { font-family: inherit; cursor: pointer; border: none; background: none; }
@@ -535,9 +537,24 @@ footer p {
     font-size: 16px;
   }
 }
-/* =========================================================
-   8. Moblie Responsive (width 760px 기준, 4 columns / margin 10 / gutter 12)
+/* ========================================================
+   8. Moblie Responsive (width 540px 기준, 4 columns / margin 10 / gutter 12)
    ========================================================= */
-   /* @media (max-width: 760px){
-      
-   } */
+@media screen and (max-width : 540px) {
+  body{
+    padding-bottom: 102px;
+  }
+  .container{
+    width: 100%;
+    padding: 20px 10px;
+  }
+  header:not(.header_mobile_booking){
+    display: none;
+  }
+  .header_mobile_booking{
+    display: flex;
+  }
+
+
+  
+}

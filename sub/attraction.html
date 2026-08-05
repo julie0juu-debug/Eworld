@@ -44,19 +44,21 @@
     </div>
     
     <!-- 오버랩 타이틀 & 필터 탭 박스 -->
-    <div class="attraction_filter_box">
-      <div class="page_badge">어트랙션</div>
-      <div class="filter_inner">
-        <ul class="zone_tabs">
-          <li class="tab_item"><button type="button">전체</button></li>
-          <li class="tab_item"><button type="button">판타지월드</button></li>
-          <li class="tab_item"><button type="button">매직월드</button></li>
-          <li class="tab_item"><button type="button">어드벤처월드</button></li>
-          <li class="tab_item"><button type="button">83타워</button></li>
-        </ul>
-        <button type="button" class="btn_detail_setting">    
-          <i class="fa-solid fa-sliders"></i>
-           세부설정</button>
+    <div class="at_b">
+      <div class="attraction_filter_box">
+        <div class="page_badge">어트랙션</div>
+        <div class="filter_inner">
+          <ul class="zone_tabs">
+            <li class="tab_item"><button type="button">전체</button></li>
+            <li class="tab_item"><button type="button">판타지월드</button></li>
+            <li class="tab_item"><button type="button">매직월드</button></li>
+            <li class="tab_item"><button type="button">어드벤처월드</button></li>
+            <li class="tab_item"><button type="button">83타워</button></li>
+          </ul>
+          <button type="button" class="btn_detail_setting">    
+            <i class="fa-solid fa-sliders"></i><span>세부설정</span>
+            </button>
+        </div>
       </div>
     </div>
   </div>
@@ -76,6 +78,7 @@
           <div class="card_title_row">
             <h3 class="attraction_name">에어레이스</h3>
             <span class="status_badge status_active">운행중</span>
+            <span class="status_congestion status_busy">혼잡</span>
           </div>
           <p class="attraction_desc">국내유일 입체회전 서스펜션 놀이기구</p>
         </div>
@@ -90,6 +93,7 @@
           <div class="card_title_row">
             <h3 class="attraction_name">메가스윙 360</h3>
             <span class="status_badge status_active">운행중</span>
+            <span class="status_congestion status_busy">혼잡</span>
           </div>
           <p class="attraction_desc">360도 회전스윙을 즐기는 놀이기구의 혁명!</p>
         </div>
@@ -104,6 +108,7 @@
           <div class="card_title_row">
             <h3 class="attraction_name">탬버린</h3>
             <span class="status_badge status_active">운행중</span>
+            <span class="status_congestion status_smooth">쾌적</span>
           </div>
           <p class="attraction_desc">엉덩이를 퉁퉁퉁 튕겨도 신나는 디스코팡!</p>
         </div>
@@ -118,6 +123,7 @@
           <div class="card_title_row">
             <h3 class="attraction_name">벌룬레이스</h3>
             <span class="status_badge status_active">운행중</span>
+            <span class="status_congestion status_busy">혼잡</span>
           </div>
           <p class="attraction_desc">아담한 열기구를 타고 떠나는 고공 여행!</p>
         </div>
@@ -132,6 +138,7 @@
           <div class="card_title_row">
             <h3 class="attraction_name">뮤직익스프레스</h3>
             <span class="status_badge status_active">운행중</span>
+            <span class="status_congestion status_smooth">쾌적</span>
           </div>
           <p class="attraction_desc">굴곡 주행궤도를 따라 빠르게 회전하는 놀이시설!</p>
         </div>
@@ -146,6 +153,7 @@
           <div class="card_title_row">
             <h3 class="attraction_name">범퍼카</h3>
             <span class="status_badge status_active">운행중</span>
+            <span class="status_congestion status_smooth">쾌적</span>
           </div>
           <p class="attraction_desc">운전면허가 필요없는 박치기 차들의 반란!</p>
         </div>
@@ -160,6 +168,7 @@
           <div class="card_title_row">
             <h3 class="attraction_name">스위티컵</h3>
             <span class="status_badge status_active">운행중</span>
+            <span class="status_congestion status_busy">혼잡</span>
           </div>
           <p class="attraction_desc">가족, 연인, 친구들과 함께 컵 속에서 빙글빙글~</p>
         </div>
@@ -174,6 +183,7 @@
           <div class="card_title_row">
             <h3 class="attraction_name">회전목마</h3>
             <span class="status_badge status_active">운행중</span>
+            <span class="status_congestion status_smooth">쾌적</span>
           </div>
           <p class="attraction_desc">어른, 아이 누구나 변함없이 좋아하는 회전목마!</p>
         </div>
@@ -188,6 +198,7 @@
           <div class="card_title_row">
             <h3 class="attraction_name">제트레이스</h3>
             <span class="status_badge status_active">운행중</span>
+            <span class="status_congestion status_smooth">쾌적</span>
           </div>
           <p class="attraction_desc">착륙, 이륙~ 신나게 하늘을 날아보세요!</p>
         </div>
@@ -202,6 +213,7 @@
           <div class="card_title_row">
             <h3 class="attraction_name">바이킹</h3>
             <span class="status_badge status_active">운행중</span>
+            <span class="status_congestion status_smooth">쾌적</span>
           </div>
           <p class="attraction_desc">회전각 좌우 65도! 국내 최대 해적선 바이킹!</p>
         </div>
@@ -216,12 +228,13 @@
           <div class="card_title_row">
             <h3 class="attraction_name">후룸라이드</h3>
             <span class="status_badge status_active">운행중</span>
+            <span class="status_congestion status_busy">혼잡</span>
           </div>
           <p class="attraction_desc">온 가족이 함께 통나무배를 타는 신나는 대탐험</p>
         </div>
       </article>
-
-      <!-- Item 12 (운휴 예시) -->
+      <!-- plz -->
+      <!-- Item 12 (운휴 ) -->
       <article class="attraction_card">
         <div class="thumb_box">
           <img src="../img/attraction_boo.jpg" alt="부메랑">
@@ -230,6 +243,7 @@
           <div class="card_title_row">
             <h3 class="attraction_name">부메랑</h3>
             <span class="status_badge status_stop">운휴</span>
+            <span class="status_congestion status_stop">운휴</span>
           </div>
           <p class="attraction_desc">앞으로 떨어졌다 다시 뒤로 떨어지는 롤러코스터!</p>
         </div>

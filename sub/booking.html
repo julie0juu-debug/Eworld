@@ -31,9 +31,25 @@
         </div>
      </header>
     <!-- //header -->
+
+    <!-- mobile header -->
+     <header class="header_mobile_booking">
+        <button type="button" class="icon_btn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+         <button type="button" class="icon_btn">
+            <i class="fa-regular fa-user"></i>
+        </button>
+        <button type="button" class="icon_btn">
+            <i class="fa-regular fa-bell"></i>
+        </button>
+     </header>
+    <!-- //mobile header -->
     
     <!-- main -->
     <main class="container">
+    <!-- mobtitle -->
+     <h2 class="mobile_page_title">예매</h2>
      <!-- selection_bar -->
       <section class="info_bar_box">
         <div class="info_item date_picker">
@@ -232,6 +248,32 @@
         </div>
     </footer>
     <!-- //footer -->
+     
+    <!-- Mobile Sticky Action Bar (상세설정 / 예매하기) -->
+    <div class="mobile_action_bar">
+        <button type="button" class="btn_detail_mobile">상세설정</button>
+        <button type="button" class="btn_buy_mobile">예매하기</button>
+    </div>
+
+    <!-- Mobile Fixed Bottom Navigation Bar -->
+    <nav class="mobile_bottom_bar">
+        <a href="#" class="nav_item is-active">
+            <i class="fa-solid fa-house"></i>
+            <span>홈</span>
+        </a>
+        <a href="#" class="nav_item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>INFO / MAP</span>
+        </a>
+        <a href="#" class="nav_item">
+            <i class="fa-solid fa-ticket"></i>
+            <span>티켓</span>
+        </a>
+        <a href="#" class="nav_item">
+            <i class="fa-solid fa-bars"></i>
+            <span>전체메뉴</span>
+        </a>
+    </nav>
 
     <script>
         // 혜택필터 드롭다운 토글
