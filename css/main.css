@@ -536,6 +536,13 @@ main.container section { margin-top: 64px; }
 .benefit_card:nth-child(5) .benefit_visual { background: linear-gradient(289.77deg, #FFFFFF -4.05%, #FFF0B2 105.15%); }
 .benefit_card:nth-child(6) .benefit_visual { background: linear-gradient(121.64deg, #FFC3BE -34.55%, #FFFFFF 108.76%); }
 
+.benefit_card:hover{
+    transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+
 /* =========================================================
    Guide map
    ========================================================= */
@@ -716,6 +723,53 @@ footer {
         gap: 14px;
         height: 304px;
     }
+    .benefit_card{
+        aspect-ratio: auto;
+        height: 100%;
+    }
+    .benefit_card:nth-child(1){
+        grid-column: 1;
+        grid-row: 1 /span 2;
+        height: 304px;
+    }
+
+    .benefit_card:nth-child(2) .benefit_visual,
+    .benefit_card:nth-child(3) .benefit_visual{
+        flex: 2;
+        height: 100%;
+        padding: 10px;
+    }
+    .benefit_card:nth-child(2) .benefit_body,
+    .benefit_card:nth-child(3) .benefit_body {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        padding: 12px 14px;
+        border-top: none;
+        border-left: 1px solid var(--color-border); 
+    }
+    .benefit_card:nth-child(2) .benefit_row,
+    .benefit_card:nth-child(3) .benefit_row {
+    display: flex;
+    flex-direction: column ;
+    align-items: flex-start;
+    gap: 6px;
+    width: 100%;
+    }
+
+    .benefit_card:nth-child(2) .benefit_title,
+    .benefit_card:nth-child(3) .benefit_title{
+        font-size: 16px;
+    } 
+    .benefit_card:nth-child(2) .benefit_price,
+    .benefit_card:nth-child(3) .benefit_price {
+        font-size: 16px;
+    }
+
+    .benefit_card:nth-child(n+4) { display: none; }
+
+
     .benefit_card { aspect-ratio: auto; height: 100%; }
     .benefit_card:nth-child(1) { grid-column: 1; grid-row: 1 / span 2; height: 304px; }
     .benefit_card:nth-child(2) { grid-column: 2; grid-row: 1; flex-direction: row; height: 145px; }
