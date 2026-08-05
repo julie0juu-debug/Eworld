@@ -70,9 +70,17 @@
     <!-- herosection -->
     <div class="hero-wrapper">
         <div class="hero-box">
-            <a href="#">
-                <img src="img/main_banner.png" alt="herobanner_img1" >
-            </a>
+            <div class="hero_slider">
+                <a href="#" class="hero_slide is-active">
+                    <img src="img/main_banner.png" alt="herobanner_img1" >
+                </a>
+                <a href="#" class="hero_slide">
+                    <img src="img/herobanner_1.jpg" alt="herobanner_img2">
+                </a>
+                <a href="#" class="hero_slide">
+                    <img src="img/mainbanner3.jpg" alt="mainbanner3">
+                </a>
+            </div>
             <button type="button" class="hero_nav hero_nav--prev" aria-label="이전 배너">‹</button>
             <button type="button" class="hero_nav hero_nav--next" aria-label="다음 배너">›</button>
             <div class="hero_counter">
@@ -197,7 +205,7 @@
 
         <!-- commercial banner-->
         <section class="com_b">
-            <div class="commercial_banner">
+            <div class="commercial_banner banner1">
                 <img src="img/commercial_banner1.jpg" alt="commercial_banner1">
             </div>
         </section>
@@ -511,6 +519,91 @@
                 });
             }, 200);
         });
+    })();
+    </script>
+    <script>
+    (function () {
+        const heroBox = document.querySelector('.hero-box');
+        const slider = document.querySelector('.hero_slider');
+        if (!slider) return;
+
+        const slides = slider.querySelectorAll('.hero_slide');
+        // HTML의 class명을 정확하게 탐색하도록 수정
+        const prevBtn = heroBox.querySelector('.hero_nav--prev');
+        const nextBtn = heroBox.querySelector('.hero_nav--next');
+        const counterSpan = heroBox.querySelector('.hero_counter span');
+        const pauseBtn = heroBox.querySelector('.hero_pause');
+
+        let currentIndex = 0;
+        let isPlaying = true;
+        let slideTimer = null;
+        const INTERVAL_TIME = 3000;
+
+        function updateSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('is-active', i === index);
+            });
+            if (counterSpan) {
+                counterSpan.textContent = `${index + 1} / ${slides.length}`;
+            }
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateSlide(currentIndex);
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            updateSlide(currentIndex);
+        }
+
+        function startAutoSlide() {
+            stopAutoSlide();
+            slideTimer = setInterval(nextSlide, INTERVAL_TIME);
+        }
+
+        function stopAutoSlide() {
+            if (slideTimer) {
+                clearInterval(slideTimer);
+                slideTimer = null;
+            }
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                if (isPlaying) startAutoSlide();
+            });
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                if (isPlaying) startAutoSlide();
+            });
+        }
+
+        if (pauseBtn) {
+            pauseBtn.addEventListener('click', () => {
+                isPlaying = !isPlaying;
+                if (isPlaying) {
+                    pauseBtn.textContent = '❙❙';
+                    startAutoSlide();
+                } else {
+                    pauseBtn.textContent = '▶';
+                    stopAutoSlide();
+                }
+            });
+        }
+
+        heroBox.addEventListener('mouseenter', stopAutoSlide);
+        heroBox.addEventListener('mouseleave', () => {
+            if (isPlaying) startAutoSlide();
+        });
+
+        updateSlide(currentIndex);
+        startAutoSlide();
     })();
     </script>
 </body>
