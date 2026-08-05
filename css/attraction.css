@@ -20,14 +20,11 @@ button{
     padding: 0;
     cursor: pointer;
 }
-<<<<<<< HEAD
 .mobile_subnav { display: none; }
 .header_mobile,
 .mobile_bottom_bar { display: none; }
 .hero_mobile_bar { display: none; }
 .status_congestion { display: none; }
-=======
->>>>>>> 46bad729ddd12b029905e78b810e7300c9438c2f
 
 header {
   display: flex;
@@ -316,18 +313,11 @@ footer p {
         grid-template-columns: repeat(2,1fr);
     }
 }
-<<<<<<< HEAD
 @media screen and (max-width:560px){
     header{
         display: none;
     }
     
-=======
-@media screen and (max-width:760px){
-    header{
-        display: none;
-    }
->>>>>>> 46bad729ddd12b029905e78b810e7300c9438c2f
     .hero_mobile_bar{
         display: flex;
         align-items: center;
@@ -344,7 +334,6 @@ footer p {
         align-items: center;
         justify-content: center;
         font-size: 22px;
-<<<<<<< HEAD
         color: #FFFFFF;
         background: transparent;
     }
@@ -354,23 +343,13 @@ footer p {
     }
 
     .mobile_bottom_bar {
-=======
-        color: #ffffff;
-        background: transparent;
-    }
-    .mobile_bottom_bar{
->>>>>>> 46bad729ddd12b029905e78b810e7300c9438c2f
         display: flex;
         position: fixed;
         bottom: 0;
         left: 0;
         right: 0;
         height: 64px;
-<<<<<<< HEAD
         background: #FFF6E5;
-=======
-        background-color: #FFF6E5;
->>>>>>> 46bad729ddd12b029905e78b810e7300c9438c2f
         z-index: 999;
         border-top: 1px solid #FFE7BA;
         justify-content: space-around;
@@ -378,7 +357,6 @@ footer p {
         padding: 6px 12px;
         box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.04);
     }
-<<<<<<< HEAD
 
     .mobile_bottom_bar .nav_item {
         display: flex;
@@ -388,14 +366,6 @@ footer p {
         gap: 3px;
         color: #6D6D6D;
         text-decoration: none;
-=======
-    .mobile_bottom_bar .nav_item{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 3px;
-        color: #6d6d6d;
->>>>>>> 46bad729ddd12b029905e78b810e7300c9438c2f
         flex: 1;
     }
 
@@ -419,16 +389,11 @@ footer p {
     .sub_hero_wrapper{
         height: 307px;
     }
-<<<<<<< HEAD
     .at_b{
         max-height: 129px;
     }
     .attraction_filter_box{
         width: calc(100% -20px);
-=======
-    .attraction_filter_box{
-        width: calc(100% - 20px);
->>>>>>> 46bad729ddd12b029905e78b810e7300c9438c2f
         height: 129px;
         left: 50%;
         transform: translateX(-50%);
@@ -443,11 +408,6 @@ footer p {
         text-align: center;
         position: absolute;
     }
-<<<<<<< HEAD
-=======
-
-    /* 어트랙션 뱃지 : 히어로/필터박스 경계에 걸치도록 */
->>>>>>> 46bad729ddd12b029905e78b810e7300c9438c2f
     .page_badge{
         width: 158px;
         height: 51px;
@@ -459,7 +419,6 @@ footer p {
         bottom: auto;
         transform: translateX(-50%);
     }
-<<<<<<< HEAD
 
     .filter_inner{
         position: relative;
@@ -470,19 +429,6 @@ footer p {
         margin: 0;
         width: 100%;
     }
-=======
-    
-    .filter_inner{
-        position: relative;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 14px;
-        margin: 0;
-        width: 100%;
-    }
-
->>>>>>> 46bad729ddd12b029905e78b810e7300c9438c2f
     .zone_tabs{
         flex-wrap: wrap;
         justify-content: center;
@@ -493,10 +439,6 @@ footer p {
         font-size: 13px;
         font-weight: 400;
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> 46bad729ddd12b029905e78b810e7300c9438c2f
     .btn_detail_setting{
         position: absolute;
         top: -10px;
@@ -506,15 +448,8 @@ footer p {
     .btn_detail_setting .detail_text{
         display: none;
     }
-<<<<<<< HEAD
     .container{
         padding: 0 16px;
-=======
-
-    /* 어트랙션 리스트 : 1열 가로형 카드 */
-    .container{
-        padding: 0 10px;
->>>>>>> 46bad729ddd12b029905e78b810e7300c9438c2f
         margin-top: 20px;
     }
     .attraction_list_grid{
@@ -522,7 +457,6 @@ footer p {
         gap: 16px;
         padding-bottom: 20px;
     }
-<<<<<<< HEAD
     /* .at_b{
         width: 100%;
         padding: 0 10px;
@@ -535,37 +469,16 @@ footer p {
         min-height: 96px;
         background-color: #ffffff;
         border: 0.75px solid rgba(255, 163, 0, 0.45);
-=======
-    .attraction_card{
-        position: relative;
-        width: 100%;
-        height: auto;
-        min-height: 96px;
-        background-color: #FFFFFF;
-        border: 0.75px solid #FFA300;
->>>>>>> 46bad729ddd12b029905e78b810e7300c9438c2f
         border-radius: 10px;
         display: flex;
         align-items: center;
         padding: 10px;
-<<<<<<< HEAD
         /* overflow: hidden; */
     }
     .thumb_box{
         width: 72px;
         height: 72px;
         margin: 0 12px 0 0 ;
-=======
-    }
-    .attraction_card:hover{
-        transform: none;
-        box-shadow: none;
-    }
-    .thumb_box{
-        width: 76px;
-        height: 76px;
-        margin: 0 12px 0 0;
->>>>>>> 46bad729ddd12b029905e78b810e7300c9438c2f
         flex-shrink: 0;
     }
     .thumb_box img{
@@ -576,12 +489,6 @@ footer p {
         flex: 1;
         padding-right: 44px;
     }
-<<<<<<< HEAD
-=======
-    .card_title_row{
-        margin-bottom: 4px;
-    }
->>>>>>> 46bad729ddd12b029905e78b810e7300c9438c2f
     .attraction_name{
         font-size: 14px;
         font-weight: 500;
@@ -593,12 +500,9 @@ footer p {
     .status_badge{
         display: none;
     }
-<<<<<<< HEAD
     .status_badge.status_stop{
         color: #FF7171;
     }
-=======
->>>>>>> 46bad729ddd12b029905e78b810e7300c9438c2f
     .status_congestion{
         display: block;
         position: absolute;
@@ -609,7 +513,6 @@ footer p {
         font-weight: 500;
     }
 
-<<<<<<< HEAD
     .status_congestion.status_busy{
         color: #FF7171;
         font-weight: 600;
@@ -624,8 +527,6 @@ footer p {
     }
 
 
-=======
->>>>>>> 46bad729ddd12b029905e78b810e7300c9438c2f
     /* 푸터 */
     footer{
         margin-top: 40px;
