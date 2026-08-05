@@ -220,7 +220,7 @@ footer {
   gap: 16px;
   margin-bottom: 12px;
   font-weight: 700;
-  color: #1F2937;
+  color: var(--color-primary);
 }
 .footer_link a:nth-child(2) {
   color: var(--color-primary); /* 개인정보처리방침 포인트 */

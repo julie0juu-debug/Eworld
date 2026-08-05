@@ -423,7 +423,7 @@ footer {
   margin-top: 80px;
   padding: 40px 0;
   border-top: 1px solid var(--color-border);
-  font-size: 12px;
+  font-size: 14px;
   color: var(--color-sub);
 }
 .footer_link {
@@ -431,12 +431,14 @@ footer {
   gap: 16px;
   margin-bottom: 12px;
   font-weight: 700;
+  color: var(--color-primary);
 }
 .footer_link a:nth-child(2) {
   color: var(--color-primary); /* 개인정보처리방침 포인트 */
 }
 footer p {
-  margin-top: 4px;
+  margin-top: 16px;
+  color: #9CA3AF;
 }
 
 /* =========================================================
