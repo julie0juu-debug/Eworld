@@ -64,7 +64,7 @@ h3 {
 .header_tablet,
 .header_mobile { display: none; }
 
-header.header_desktop_tablet,
+/* header.header_desktop_tablet, */
 header {
     max-width: 1280px;
     margin: 20px auto;
@@ -73,6 +73,14 @@ header {
     justify-content: space-between;
     gap: 24px;
     padding: 0 16px;
+}
+header.header_desktop_tablet{
+    position: relative;
+    z-index: 1000;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 .logo {
     font-weight: 900;
@@ -86,18 +94,95 @@ header {
     height: auto;
 }
 
-.header_nav_menu { flex: 1; }
+.header_nav_menu {
+    position: relative;
+    z-index: 10;
+}
 
-.header_nav_menu ul {
+.header_nav_menu .gnb{
     display: flex;
     justify-content: center;
     gap: 40px;
 }
 
-.header_nav_menu li {
+.gnb_area{
+    position: relative;
+    flex: 1;
+}
+
+
+.gnb_item{
+    position: relative;
+    text-align: center;
+}
+.gnb_item .main_menu{
+    display: block;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--color-ink);
+    padding: 4px 0;
+    transition: color 0.2s ease;
+}
+.gnb_item.active .main_menu,
+.gnb_item:hover .main_menu{
+    color: var(--color-main);
+}
+.sub_menu{
+    display: none;
+    position: absolute;
+    top: 52px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 110px;
+    padding-top: 16px;
+    padding-bottom: 12px;
+    text-align: center;
+}
+.sub_menu li{
+    margin-bottom: 12px;
+}
+.sub_menu li:last-child{
+    margin-bottom: 0;
+}
+.sub_menu a {
+        font-family: 'Noto Sans', sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 22px;
+        color: #404040;
+        transition: color 0.2s ease, font-weight 0.2s ease;
+        white-space: nowrap;
+}
+.sub_menu a:hover {
+        color: var(--color-main);
+        font-weight: 700;
+}
+.header_dropdown_bg {
+        display: none;
+        position: fixed;
+        top: 82px;
+        left: 0;
+        width: 100vw;
+        height: 200px;
+        background: #FAFAFA;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border-radius: 0 0 16px 16px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        z-index: 1;
+        pointer-events: auto;
+}
+
+/* .header_nav_menu ul {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+} */
+
+/* .header_nav_menu li {
     font-weight: 700;
     font-size: 20px;
-}
+} */
 
 .auth_menu ul {
     display: flex;
@@ -106,8 +191,8 @@ header {
 }
 
 .auth_menu li {
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 18px;
+    font-weight: 500;
     white-space: nowrap;
 }
 

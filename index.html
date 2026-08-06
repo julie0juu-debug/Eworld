@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"><!-- fontawesome -->
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/main.css">
+    <script src="script/jquery-4.0.0.min.js"></script>
+    <script src="script/jquery-ui.min.js"></script>
+
 </head>
 <body>
     <!-- header (Desktop & Tablet) -->
@@ -22,15 +25,57 @@
                 <img src="img/logo.svg" alt="logo">
             </div></a>
         </div>
-        <nav class="header_nav_menu">
-            <ul>
-                <li><a href="sub/attraction.html">즐길거리</a></li>
-                <li><a href="#">시설정보</a></li>
-                <li><a href="#">요금혜택</a></li>
-                <li><a href="#">이용가이드</a></li>
-                <li><a href="#">소통서비스</a></li>
-            </ul>
-        </nav>
+        <div class="gnb_area">
+            <nav class="header_nav_menu">
+                <ul class="gnb">
+                    <li class="gnb_item">
+                        <a href="sub/attraction.html" class="main_menu">즐길거리</a>
+                        <ul class="sub_menu">
+                            <li><a href="sub/attraction.html">어트랙션</a></li>
+                            <li><a href="#">추천코스</a></li>
+                            <li><a href="#">공연</a></li>
+                            <li><a href="#">주주팜</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb_item">
+                        <a href="#" class="main_menu">시설정보</a>
+                        <ul class="sub_menu">
+                            <li><a href="#">시설정보</a></li>
+                            <li><a href="#">식음시설</a></li>
+                            <li><a href="#">편의시설</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb_item">
+                        <a href="#" class="main_menu">요금혜택</a>
+                        <ul class="sub_menu">
+                            <li><a href="#">이용요금</a></li>
+                            <li><a href="#">할인 / 혜택</a></li>
+                            <li><a href="#">연간회원</a></li>
+                            <li><a href="#">이달의 혜택</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb_item">
+                        <a href="#" class="main_menu">이용가이드</a>
+                        <ul class="sub_menu">
+                            <li><a href="#">운영시간</a></li>
+                            <li><a href="#">운휴정보</a></li>
+                            <li><a href="#">교통주차안내</a></li>
+                            <li><a href="#">가이드맵</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb_item">
+                        <a href="#" class="main_menu">소통서비스</a>
+                        <ul class="sub_menu">
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">이용문의</a></li>
+                            <li><a href="#">분실물 센터</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header_dropdown_bg"></div>
+        </div>
         <div class="auth_menu">
             <ul>
                 <li><a href="sub/booking.html">예매하기</a></li>
@@ -40,6 +85,7 @@
         <button type="button" class="search_toggle" aria-label="검색">
             <i class="fa-solid fa-magnifying-glass"></i>
         </button>
+        
     </header>
     <!-- //header -->
 
@@ -605,6 +651,51 @@
         updateSlide(currentIndex);
         startAutoSlide();
     })();
+    </script>
+    <!-- ////////////////////// -->
+    
+    <script>
+    $(function(){
+    const DESKTOP_WIDTH = 1025;
+    let hideTimer = null;
+
+    // 1. GNB 전체 영역 및 배경 열기/닫기 함수
+    function openMega() {
+        if ($(window).width() >= DESKTOP_WIDTH) {
+        clearTimeout(hideTimer);
+        $(".sub_menu, .header_dropdown_bg").stop().slideDown(300);
+        }
+    }
+
+    function closeMega() {
+        if ($(window).width() >= DESKTOP_WIDTH) {
+        $(".sub_menu, .header_dropdown_bg").stop().slideUp(300);
+        $(".gnb_item").removeClass("on"); // 활성화 클래스 초기화
+        }
+    }
+
+    // 2. GNB 마우스 호버 이벤트
+    $(".header_nav_menu").on('mouseenter', openMega);
+    $(".header_nav_menu, .header_dropdown_bg").on('mouseleave', closeMega);
+
+    // 3. 개별 메뉴 1depth(gnb_item) 활성화 처리
+    $(".gnb_item").on('mouseenter focusin', function(){
+        if ($(window).width() >= DESKTOP_WIDTH) {
+        // 마우스 오버 / Tab 포커스된 항목에 .on 추가, 형제 요소는 .on 제거
+        $(this).addClass("on").siblings().removeClass("on");
+        }
+    });
+
+    // 4. Tab 키 접근성 (포커스가 GNB 밖으로 나가면 닫기)
+    $(".header_nav_menu").on('focusin', openMega);
+    $(".header_nav_menu").on('focusout', function(){
+        hideTimer = setTimeout(function(){
+        if (!$(".header_nav_menu").find(':focus').length) {
+            closeMega();
+        }
+        }, 10);
+    });
+    });
     </script>
 </body>
 </html>
