@@ -30,9 +30,10 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 18px 0;
+  max-width: 1280px;
+  width: 100%;
+  margin: 20 auto;
+  padding: 18px 20px;
   border-bottom: 1px solid var(--color-border);
 }
 .mobile_subnav {display: none;}
@@ -53,11 +54,12 @@ header {
 }
 header{
     max-width: 1280px;
-    margin: auto;
+    margin: 20px auto;
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
     margin-bottom: 20px;
+    align-content: center;
 }
 .logo img{
         display: block;
@@ -75,6 +77,9 @@ header{
   font-weight: 500;
   font-size: 20px;
 }
+.btn_detail_setting span{
+        margin-left: 12px;
+     }
 
 .auth_menu ul {
   display: flex;
@@ -101,7 +106,8 @@ header{
 }
 .attraction_filter_box{
     height: 304px;
-    width:  1280px;
+    width: calc(100% - 40px);
+    max-width: 1280px;
     background-color: white;
     position: absolute;
     bottom: 0px;
@@ -152,9 +158,11 @@ header{
 }
 .container{
     max-width: 1280px;
+    width: 100%;
     /* background-color: aliceblue; */
     margin: 0 auto;
     margin-top: 40px;
+    padding: 0 20px;
 
 }
 .attraction_list_grid{
@@ -235,6 +243,8 @@ footer p {
         padding: 0 20px;
         margin-top: 16px;
         margin-bottom: 16px;
+        justify-content: flex-start;
+        gap: 16px;
     }
     
     .logo, .auth_menu{
@@ -246,6 +256,7 @@ footer p {
         justify-content: center;
         width: 28px;
         height: 24px;
+        order: -1;
     }
     .header_nav_menu ul{
         gap: 24px;
@@ -298,6 +309,7 @@ footer p {
      .btn_detail_setting{
         align-self: center;
      }
+     
     .filter_inner .zone_tabs .tab_item button{
         font-size: 20px;
     }

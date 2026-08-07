@@ -621,7 +621,7 @@ footer p {
   .booking_layout{
     display: block;
     gap: 0;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
   }
   .selection_bar{
     display: none;
