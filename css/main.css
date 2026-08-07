@@ -1130,7 +1130,9 @@ footer {
         font-size: 12px;
         color: #000000;
     }
-
+    .tw_links_row span{
+        margin-left: 12px;
+    }
     .tw_link {
         font-size: 12px;
         color: #000000;
