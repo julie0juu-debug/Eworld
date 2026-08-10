@@ -491,11 +491,13 @@ main.container section { margin-top: 64px; }
 
 .attraction_deco {
     background-image: url(img/Layer\ 2.png);
-    background-size: cover;
+    background-size: contain;
     display: flex;
     align-items: center;
     justify-content: center;
     aspect-ratio: 308 / 355;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .attraction-card {
