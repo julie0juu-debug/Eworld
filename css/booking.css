@@ -287,6 +287,22 @@ header {
   font-size: 15px;
   font-weight: 800;
 }
+.date_picker input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-primary); 
+  background: transparent;
+  cursor: pointer;
+  text-align: right; 
+  width: 140px;
+}
+
+.flatpickr-day.selected {
+  background: var(--color-primary) !important; 
+  border-color: var(--color-primary) !important;
+}
 
 /* =========================================================
    5. Ticket Items 

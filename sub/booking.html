@@ -8,8 +8,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"><!-- 폰트 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"><!-- fontawesome -->
     <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon"><!-- favicon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/air-datepicker@3.5.0/air-datepicker.css"> <!-- datepicker -->
     <link rel="stylesheet" href="../css/booking.css">
 </head>
+<script src="https://cdn.jsdelivr.net/npm/air-datepicker@3.5.0/air-datepicker.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+  new AirDatepicker('#visit_date', {
+    locale: {
+      days: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'],
+      daysShort: ['일', '월', '화', '수', '목', '금', '토'],
+      daysMin: ['일', '월', '화', '수', '목', '금', '토'],
+      months: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+      monthsShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+      today: '오늘',
+      clear: '초기화',
+      dateFormat: 'yyyy.MM.dd',
+      firstDay: 0
+    },
+    minDate: new Date(),
+    autoClose: true,
+    selectedDates: [new Date()]
+  });
+});
+</script>
 <body>
     <!-- header -->
      <header>
@@ -58,7 +80,7 @@
       <section class="info_bar_box">
         <div class="info_item date_picker">
             <label for="visit_date">방문예정일</label>
-            <input type="date" id="visit_date" name="visit_date">
+            <input type="text" id="visit_date" name="visit_date" readonly>
         </div>
         <div class="info_item_hours">
             <span class="label">운영시간</span>
