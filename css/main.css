@@ -564,7 +564,6 @@ main.container section { margin-top: var(--section-space); }
     aspect-ratio: auto;
     border-radius: 0;
     overflow: hidden;
-    background: var(--color-cream);
 }
 
 .commercial_banner img {
