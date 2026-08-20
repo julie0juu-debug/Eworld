@@ -269,10 +269,13 @@ header.header_desktop_tablet{
     visibility: visible;
     z-index: 2;
 }
-.hero_slide img{
+
+.hero_slide img,
+.hero-box img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
 }
 
 
@@ -361,6 +364,7 @@ header.header_desktop_tablet{
     border-radius: 14px;
     background: var(--color-white);
 }
+
 .quick_icon i { line-height: 1; }
 .quick_item--weather .weather_row{
     display: flex;
@@ -389,11 +393,15 @@ header.header_desktop_tablet{
     color: #111827;
     line-height: 1;
 }
+
 .quick_item--weather .quick_deg {
     font-size: 16px;
     font-weight: 400;
     color: #555555;
     margin-left: 2px;
+}
+.quick_icon.weather{
+    border: none;
 }
 
 /* =========================================================
@@ -559,7 +567,7 @@ main.container section { margin-top: var(--section-space); }
 .commercial_banner {
     width: 100vw;
     /* max-width: none; */
-    height: 450px;
+    /* height: 450px; */
     margin-left: calc(50% - 50vw);
     aspect-ratio: auto;
     border-radius: 0;
@@ -569,7 +577,7 @@ main.container section { margin-top: var(--section-space); }
 .commercial_banner img {
     width: 100%;
     height: auto;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 /* =========================================================
@@ -1456,7 +1464,6 @@ footer {
         height: 56px;
         padding: 10px;
         font-size: 24px;
-        line-height: 1;
         border-radius: 14px;
     }
 
