@@ -102,15 +102,12 @@
                 <button type="button" class="icon_btn" aria-label="알림">
                     <i class="fa-regular fa-bell"></i>
                 </button>
+                <button type="button" class="icon_btn" aria-label="전체메뉴">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
         </div>
-        <nav class="mobile_subnav">
-            <ul>
-                <li class="is-active"><a href="#">홈</a></li>
-                <li><a href="#">혜택</a></li>
-                <li><a href="#">이벤트</a></li>
-            </ul>
-        </nav>
+        
     </header>
 
     <!-- herosection -->
@@ -155,9 +152,8 @@
                 </div>
                 <div class="tw_row_desktop">
                     <span class="tw_icon"><i class="fa-solid fa-cloud"></i></span>
+                    <span>오늘의 이월드는</span>
                     <span class="tw_temp">20<span class="tw_deg">°C</span></span>
-                    <span class="tw_label">운영시간</span>
-                    <span class="tw_hours">8시~21시</span>
                 </div>
             </div>
             <div class="quick_bar">
@@ -431,7 +427,7 @@
     <!-- 이월드 베스트 어트랙션 : 데스크탑 자동 슬라이드 캐러셀 -->
     <script>
     (function () {
-        var DESKTOP_QUERY = '(min-width: 1025px)';
+        var DESKTOP_QUERY = '(min-width: 761px)';
         var SLIDE_INTERVAL_MS = 2500;   // 10초
         var TRANSITION_MS = 650;         // CSS scroll-behavior:smooth 이동 시간 여유값
 
@@ -697,5 +693,6 @@
     });
     });
     </script>
+    
 </body>
 </html>

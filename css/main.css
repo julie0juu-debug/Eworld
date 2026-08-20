@@ -806,20 +806,25 @@ footer {
     .more_btn { width: 24px; height: 24px; font-size: 20px; }
 
     .atrraction_grid {
+        display: block;
+        overflow: hidden;
+        padding-bottom: 0;
+    }
+    .attraction_slider{
         display: flex;
         gap: 12px;
-        overflow-x: auto;
-        padding-bottom: 4px;
+        overflow: hidden;
+        scroll-behavior: smooth;
     }
     .attraction_deco { display: none; }
-    .attraction-card {
+    .attraction_slider > .attraction-card {
         flex: 0 0 236px;
         aspect-ratio: 236 / 314;
     }
     .attraction-card--tablet-only { display: block; }
     .attraction_name { font-size: 18px; }
     .attraction_info { height: 90px; padding: 10px 14px 12px; }
-    .attraction_info p { font-size: 12px; margin: 0; }
+    .attraction_info p { font-size: 12px; margin: 10px 0 0; }
 
     main.container {
         display: grid;
@@ -831,6 +836,8 @@ footer {
     main.container > section:nth-of-type(3) { grid-column: 1 / -1; grid-row: 3; }
     main.container > section:nth-of-type(4) { grid-column: 1 / -1; grid-row: 4; }
     main.container > section:nth-of-type(5) { grid-column: 1 / -1; grid-row: 5; }
+
+    
 
     .commercial_row {
         display: flex;
