@@ -92,8 +92,7 @@ header {
 }
 .attraction_filter {
   width: 100%;
-  margin-top: 0;
-  padding: 16px 0 20px;
+  margin-top: 36px;
   background: #fff;
 }
 .filter_inner {
@@ -382,7 +381,7 @@ footer p {
   }
   .status_congestion {
     position: absolute;
-    right: 14px;
+    right: 28px;
     font-size: 14px;
   }
   .card_body {
