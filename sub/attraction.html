@@ -1,24 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>이월드 - 어트랙션</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon"> <!-- favicon -->
- <link rel="stylesheet" href="../css/attraction.css">
-</head>
-<body>
 
-  <!-- 1. Header  -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>이월드 - 어트랙션</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="../css/attraction.css" />
+</head>
+
+<body>
   <header>
     <div class="header_box">
-      <a href="../index.html"><div class="logo">
-        <img src="../img/logo.svg" alt="logo">
-      </div></a>
+      <a href="../index.html" class="logo"><img src="../img/logo.svg" alt="이월드" /></a>
     </div>
-    
-    <nav class="header_nav_menu">
+    <nav class="header_nav_menu" aria-label="주 메뉴">
       <ul>
         <li><a href="#">즐길거리</a></li>
         <li><a href="#">시설정보</a></li>
@@ -33,298 +30,245 @@
         <li><a href="#">로그인</a></li>
       </ul>
     </div>
-    <div class="mobile_menu_btn"><i class="fa-solid fa-bars"></i></div>
+    <button type="button" class="mobile_menu_btn" aria-label="메뉴 열기">
+      <i class="fa-solid fa-bars"></i>
+    </button>
   </header>
-  <section>
-    <div class="mobile_bottom_nav"></div>
-  </section>
-  <!-- 2. Sub Visual Hero Banner -->
-  <div class="sub_hero_wrapper">
+
+  <section class="sub_hero_wrapper" aria-label="어트랙션 소개 및 구역 선택">
     <div class="sub_hero_bg">
-      <img src="../img/eworld.jpg" alt="어트랙션 배경 이미지">
+      <img src="../img/eworld.jpg" alt="이월드 어트랙션 배경 이미지" />
+      <h1 class="hero_title">어트랙션</h1>
     </div>
-    
-    <!-- 오버랩 타이틀 & 필터 탭 박스 -->
-    <div class="at_b">
-      <div class="attraction_filter_box">
-        <div class="page_badge">어트랙션</div>
-        <div class="filter_inner">
-          <ul class="zone_tabs">
-            <li class="tab_item"><button type="button">
-              <i class="fa-solid fa-map"></i>전체</button></li>
-            <li class="tab_item"><button type="button">
-              <i class="fa-brands fa-fort-awesome"></i>판타지월드
-              </button></li>
-            <li class="tab_item"><button type="button">
-              <i class="fa-solid fa-hat-wizard"></i>매직월드</button></li>
-            <li class="tab_item"><button type="button">
-              <i class="fa-solid fa-compass"></i>어드벤처월드</button></li>
-            <li class="tab_item"><button type="button">
-              <i class="fa-solid fa-chess-rook"></i>83타워</button></li>
-          </ul>
-          <button type="button" class="btn_detail_setting">    
-            <i class="fa-solid fa-sliders"></i><span>세부설정</span>
-            </button>
-        </div>
+  </section>
+
+  <main class="container">
+    <div class="attraction_filter">
+      <div class="filter_inner">
+        <ul class="zone_tabs" aria-label="어트랙션 구역">
+          <li class="tab_item is-active">
+            <button type="button"><i class="fa-solid fa-map"></i>전체</button>
+          </li>
+          <li class="tab_item">
+            <button type="button"><i class="fa-brands fa-fort-awesome"></i>판타지월드</button>
+          </li>
+          <li class="tab_item">
+            <button type="button"><i class="fa-solid fa-hat-wizard"></i>매직월드</button>
+          </li>
+          <li class="tab_item">
+            <button type="button"><i class="fa-solid fa-compass"></i>어드벤처월드</button>
+          </li>
+          <li class="tab_item">
+            <button type="button"><i class="fa-solid fa-chess-rook"></i>83타워</button>
+          </li>
+        </ul>
       </div>
-    </div>
-    <div class="mobile_hero_filter">
-      <p class="mobile_hero_title">어트랙션</p>
       <div class="mobile_filter_bar">
         <details class="mobile_zone_select">
-          <summary>
-            <span>전체</span>
-            <i class="fa-solid fa-chevron-down"></i>
-          </summary>
+          <summary><span>전체</span><i class="fa-solid fa-chevron-down"></i></summary>
           <ul class="mobile_zone_options">
-            <li><button type="button"><i class="fa-brands fa-fort-awesome"></i>판타지월드</button></li>
-            <li><button type="button"><i class="fa-solid fa-hat-wizard"></i>매직월드</button></li>
-            <li><button type="button"><i class="fa-solid fa-compass"></i>어드벤처월드</button></li>
-            <li><button type="button"><i class="fa-solid fa-chess-rook"></i>83타워</button></li>
+            <li><button type="button">판타지월드</button></li>
+            <li><button type="button">매직월드</button></li>
+            <li><button type="button">어드벤처월드</button></li>
+            <li><button type="button">83타워</button></li>
           </ul>
         </details>
-        <button type="button" class="mobile_detail_btn" aria-label="세부설정">
-          <i class="fa-solid fa-sliders"></i>
-        </button>
       </div>
     </div>
 
-  </div>
-
-  <!-- 3. Main Content Section -->
-  <main class="container">
-    
-    <!-- 어트랙션 그리드 (3열 x 4행) -->
     <div class="attraction_list_grid">
-
-      <!-- Item 1 -->
       <article class="attraction_card">
         <div class="thumb_box">
-          <img src="../img/attraction_zet.jpg" alt="에어레이스">
+          <img src="../img/attraction_zet.jpg" alt="에어레이스" />
         </div>
         <div class="card_body">
           <div class="card_title_row">
-            <h3 class="attraction_name">에어레이스</h3>
+            <h2 class="attraction_name">에어레이스</h2>
             <span class="status_badge status_active">운행중</span>
             <span class="status_congestion status_busy">혼잡</span>
           </div>
           <p class="attraction_desc">국내유일 입체회전 서스펜션 놀이기구</p>
+          <p class="ride_capacity">탑승인원 : <span>{00~00명}</span></p>
         </div>
       </article>
-
-      <!-- Item 2 -->
       <article class="attraction_card">
         <div class="thumb_box">
-          <img src="../img/attraction_mega.jpg" alt="메가스윙 360">
+          <img src="../img/attraction_mega.jpg" alt="메가스윙 360" />
         </div>
         <div class="card_body">
           <div class="card_title_row">
-            <h3 class="attraction_name">메가스윙 360</h3>
+            <h2 class="attraction_name">메가스윙 360</h2>
             <span class="status_badge status_active">운행중</span>
             <span class="status_congestion status_busy">혼잡</span>
           </div>
           <p class="attraction_desc">360도 회전스윙을 즐기는 놀이기구의 혁명!</p>
+          <p class="ride_capacity">탑승인원 : <span>{00~00명}</span></p>
         </div>
       </article>
-
-      <!-- Item 3 -->
       <article class="attraction_card">
         <div class="thumb_box">
-          <img src="../img/attraction_tam.jpg" alt="탬버린">
+          <img src="../img/attraction_tam.jpg" alt="탬버린" />
         </div>
         <div class="card_body">
           <div class="card_title_row">
-            <h3 class="attraction_name">탬버린</h3>
+            <h2 class="attraction_name">탬버린</h2>
             <span class="status_badge status_active">운행중</span>
             <span class="status_congestion status_smooth">쾌적</span>
           </div>
           <p class="attraction_desc">엉덩이를 퉁퉁퉁 튕겨도 신나는 디스코팡!</p>
+          <p class="ride_capacity">탑승인원 : <span>{00~00명}</span></p>
         </div>
       </article>
-
-      <!-- Item 4 -->
       <article class="attraction_card">
         <div class="thumb_box">
-          <img src="../img/attraction_bal.jpg" alt="벌룬레이스">
+          <img src="../img/attraction_bal.jpg" alt="벌룬레이스" />
         </div>
         <div class="card_body">
           <div class="card_title_row">
-            <h3 class="attraction_name">벌룬레이스</h3>
+            <h2 class="attraction_name">벌룬레이스</h2>
             <span class="status_badge status_active">운행중</span>
             <span class="status_congestion status_busy">혼잡</span>
           </div>
           <p class="attraction_desc">아담한 열기구를 타고 떠나는 고공 여행!</p>
+          <p class="ride_capacity">탑승인원 : <span>{00~00명}</span></p>
         </div>
       </article>
-
-      <!-- Item 5 -->
       <article class="attraction_card">
         <div class="thumb_box">
-          <img src="../img/attraction_music.jpg" alt="뮤직익스프레스">
+          <img src="../img/attraction_music.jpg" alt="뮤직익스프레스" />
         </div>
         <div class="card_body">
           <div class="card_title_row">
-            <h3 class="attraction_name">뮤직익스프레스</h3>
+            <h2 class="attraction_name">뮤직익스프레스</h2>
             <span class="status_badge status_active">운행중</span>
             <span class="status_congestion status_smooth">쾌적</span>
           </div>
           <p class="attraction_desc">굴곡 주행궤도를 따라 빠르게 회전하는 놀이시설!</p>
+          <p class="ride_capacity">탑승인원 : <span>{00~00명}</span></p>
         </div>
       </article>
-
-      <!-- Item 6 -->
       <article class="attraction_card">
         <div class="thumb_box">
-          <img src="../img/attraction_car.jpg" alt="범퍼카">
+          <img src="../img/attraction_car.jpg" alt="범퍼카" />
         </div>
         <div class="card_body">
           <div class="card_title_row">
-            <h3 class="attraction_name">범퍼카</h3>
+            <h2 class="attraction_name">범퍼카</h2>
             <span class="status_badge status_active">운행중</span>
             <span class="status_congestion status_smooth">쾌적</span>
           </div>
           <p class="attraction_desc">운전면허가 필요없는 박치기 차들의 반란!</p>
+          <p class="ride_capacity">탑승인원 : <span>{00~00명}</span></p>
         </div>
       </article>
-
-      <!-- Item 7 -->
       <article class="attraction_card">
         <div class="thumb_box">
-          <img src="../img/attraction_sweet.jpg" alt="스위티컵">
+          <img src="../img/attraction_sweet.jpg" alt="스위티컵" />
         </div>
         <div class="card_body">
           <div class="card_title_row">
-            <h3 class="attraction_name">스위티컵</h3>
+            <h2 class="attraction_name">스위티컵</h2>
             <span class="status_badge status_active">운행중</span>
             <span class="status_congestion status_busy">혼잡</span>
           </div>
           <p class="attraction_desc">가족, 연인, 친구들과 함께 컵 속에서 빙글빙글~</p>
+          <p class="ride_capacity">탑승인원 : <span>{00~00명}</span></p>
         </div>
       </article>
-
-      <!-- Item 8 -->
       <article class="attraction_card">
         <div class="thumb_box">
-          <img src="../img/attraction_bingbing.jpg" alt="회전목마">
+          <img src="../img/attraction_bingbing.jpg" alt="회전목마" />
         </div>
         <div class="card_body">
           <div class="card_title_row">
-            <h3 class="attraction_name">회전목마</h3>
+            <h2 class="attraction_name">회전목마</h2>
             <span class="status_badge status_active">운행중</span>
             <span class="status_congestion status_smooth">쾌적</span>
           </div>
           <p class="attraction_desc">어른, 아이 누구나 변함없이 좋아하는 회전목마!</p>
+          <p class="ride_capacity">탑승인원 : <span>{00~00명}</span></p>
         </div>
       </article>
-
-      <!-- Item 9 -->
       <article class="attraction_card">
         <div class="thumb_box">
-          <img src="../img/attraction_palcon.jpg" alt="제트레이스">
+          <img src="../img/attraction_palcon.jpg" alt="제트레이스" />
         </div>
         <div class="card_body">
           <div class="card_title_row">
-            <h3 class="attraction_name">제트레이스</h3>
+            <h2 class="attraction_name">제트레이스</h2>
             <span class="status_badge status_active">운행중</span>
             <span class="status_congestion status_smooth">쾌적</span>
           </div>
           <p class="attraction_desc">착륙, 이륙~ 신나게 하늘을 날아보세요!</p>
+          <p class="ride_capacity">탑승인원 : <span>{00~00명}</span></p>
         </div>
       </article>
-
-      <!-- Item 10 -->
       <article class="attraction_card">
         <div class="thumb_box">
-          <img src="../img/attraction_vicking.jpg" alt="바이킹">
+          <img src="../img/attraction_vicking.jpg" alt="바이킹" />
         </div>
         <div class="card_body">
           <div class="card_title_row">
-            <h3 class="attraction_name">바이킹</h3>
+            <h2 class="attraction_name">바이킹</h2>
             <span class="status_badge status_active">운행중</span>
             <span class="status_congestion status_smooth">쾌적</span>
           </div>
           <p class="attraction_desc">회전각 좌우 65도! 국내 최대 해적선 바이킹!</p>
+          <p class="ride_capacity">탑승인원 : <span>{00~00명}</span></p>
         </div>
       </article>
-
-      <!-- Item 11 -->
       <article class="attraction_card">
         <div class="thumb_box">
-          <img src="../img/attraction_horom.jpg" alt="후룸라이드">
+          <img src="../img/attraction_horom.jpg" alt="후룸라이드" />
         </div>
         <div class="card_body">
           <div class="card_title_row">
-            <h3 class="attraction_name">후룸라이드</h3>
+            <h2 class="attraction_name">후룸라이드</h2>
             <span class="status_badge status_active">운행중</span>
             <span class="status_congestion status_busy">혼잡</span>
           </div>
           <p class="attraction_desc">온 가족이 함께 통나무배를 타는 신나는 대탐험</p>
+          <p class="ride_capacity">탑승인원 : <span>{00~00명}</span></p>
         </div>
       </article>
-      <!-- plz -->
-      <!-- Item 12 (운휴 ) -->
       <article class="attraction_card">
         <div class="thumb_box">
-          <img src="../img/attraction_boo.jpg" alt="부메랑">
+          <img src="../img/attraction_boo.jpg" alt="부메랑" />
         </div>
         <div class="card_body">
           <div class="card_title_row">
-            <h3 class="attraction_name">부메랑</h3>
+            <h2 class="attraction_name">부메랑</h2>
             <span class="status_badge status_stop">운휴</span>
             <span class="status_congestion status_stop">운휴</span>
           </div>
           <p class="attraction_desc">앞으로 떨어졌다 다시 뒤로 떨어지는 롤러코스터!</p>
+          <p class="ride_capacity">탑승인원 : <span>{00~00명}</span></p>
         </div>
       </article>
-
-    </div><!-- //.attraction_list_grid -->
-
+    </div>
   </main>
 
-
-  <!-- 4. Footer -->
   <footer>
-        <div class="container">
-            <div class="footer_link">
-                <a href="#">이월드 소개</a>
-                <a href="#">이용약관</a>
-                <a href="#" class="footer_link--accent">개인정보처리방침</a>
-                <a href="#">이메일 무단수집거부</a>
-                <a href="#">제휴&amp;입점</a>
-            </div>
-            <p class="footer_info">
-                <span>대구광역시 달서구 두류공원로 200 (주)이월드</span>
-                <span>종합안내전화 070-7549-8112</span>
-                <span>연간회원문의 카톡채널/이월드연간회원</span>
-            </p>
-            <p class="footer_info">
-                <span>대표이사 : 박동진</span>
-                <span>사업자등록번호 503-81-68487</span>
-                <span>통신판매신고번호 제2011-대구달서-0301호</span>
-            </p>
-            <p class="footer_copyright">COPYRIGHT© E-WORLD. ALL RIGHTS RESERVED.</p>
-        </div>
-    </footer>
-
-        <!-- Mobile Fixed Bottom Navigation Bar -->
-    <nav class="mobile_bottom_bar">
-        <a href="#" class="nav_item is-active">
-            <i class="fa-solid fa-house"></i>
-            <span>홈</span>
-        </a>
-        <a href="#" class="nav_item">
-            <i class="fa-solid fa-location-dot"></i>
-            <span>INFO / MAP</span>
-        </a>
-        <a href="#" class="nav_item">
-            <i class="fa-solid fa-ticket"></i>
-            <span>티켓</span>
-        </a>
-        <a href="#" class="nav_item">
-            <i class="fa-solid fa-bars"></i>
-            <span>전체메뉴</span>
-        </a>
-    </nav>
-
+    <div class="container">
+      <div class="footer_link">
+        <a href="#">이월드 소개</a><a href="#">이용약관</a><a href="#" class="footer_link--accent">개인정보처리방침</a><a href="#">이메일
+          무단수집거부</a><a href="#">제휴&amp;입점</a>
+      </div>
+      <p class="footer_info">
+        <span>대구광역시 달서구 두류공원로 200 (주)이월드</span><span>종합안내전화 070-7549-8112</span><span>연간회원문의 카톡채널/이월드연간회원</span>
+      </p>
+      <p class="footer_info">
+        <span>대표이사 : 박동진</span><span>사업자등록번호 503-81-68487</span><span>통신판매신고번호 제2011-대구달서-0301호</span>
+      </p>
+      <p class="footer_copyright">COPYRIGHT© E-WORLD. ALL RIGHTS RESERVED.</p>
+    </div>
+  </footer>
+  <nav class="mobile_bottom_bar">
+    <a href="#" class="nav_item is-active"><i class="fa-solid fa-house"></i><span>홈</span></a><a href="#"
+      class="nav_item"><i class="fa-solid fa-location-dot"></i><span>INFO / MAP</span></a><a href="#"
+      class="nav_item"><i class="fa-solid fa-ticket"></i><span>티켓</span></a><a href="#" class="nav_item"><i
+        class="fa-solid fa-bars"></i><span>전체메뉴</span></a>
+  </nav>
 </body>
+
 </html>
